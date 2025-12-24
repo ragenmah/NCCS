@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nepalese Canadian Community Services</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-left">
+                <span class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+14167359076">416 735 9076</a>
+                </span>
+                <span class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@nccs.com">info@nccs.com</a>
+                </span>
+            </div>
+            <div class="top-right">
+                <a href="#" class="top-link">Become a Member</a>
+                <a href="#" class="top-link calendar-link">
+                    <i class="far fa-calendar"></i> Calendar
+                </a>
+                <div class="language-switcher">
+                    <i class="fas fa-globe"></i>
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <!-- <span class="separator">|</span> -->
+                    <button class="lang-btn" data-lang="np">NP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="./images/logo.png" alt="NCCS Logo" />
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Directors <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header">Explore Directors</div>
+                            <ul>
+                                <li>
+                                    <a href="#"><span class="arrow">&rarr;</span> Life Members</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="arrow">&rarr;</span> General Members</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Membership</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <!-- Updated "More" Dropdown HTML -->
+                    <li class="dropdown more-dropdown">
+                        <a href="#">More <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu wide-dropdown">
+                            <div class="dropdown-header">EXPLORE MORE</div>
+                            <div class="dropdown-columns">
+                                <ul class="dropdown-column">
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> PRESIDENT'S
+                                            MESSAGE</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> VOLUNTEER</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> DOCUMENTS</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> LATEST UPDATES</a>
+                                    </li>
+                                </ul>
+                                <ul class="dropdown-column">
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> CAREER</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> FAQS</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> PHONE NUMBERS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Updated Search Item with Dropdown -->
+                    <li class="search-item dropdown search-dropdown">
+                        <a href="#"><i class="fas fa-search"></i></a>
+                        <div class="dropdown-menu search-menu">
+                            <div class="search-input-wrapper">
+                                <i class="fas fa-search search-icon-inside"></i>
+                                <input type="text" placeholder="Search nccs.com" autofocus />
+                            </div>
+                            <div class="search-suggestions">
+                                <div class="suggestions-header">QUICK LINKS</div>
+                                <ul>
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> ABOUT US</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> PROGRAM SERVICES</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> EVENTS</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> MEMBERSHIP</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span class="arrow">&rarr;</span> VOLUNTEER</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO CAROUSEL -->
+    <section class="hero">
+        <div class="carousel">
+            <!-- Slide -->
+            <div class="slide active">
+                <h1>Connecting Communities<br />Preserving Culture.</h1>
+                <p>
+                    Empowering communities, preserving culture, creating opportunity.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-light">Learn More</a>
+                    <a href="#" class="btn btn-outline">Become a Member</a>
+                </div>
+            </div>
+
+            <!-- Arrows -->
+            <button class="arrow left">&#10094;</button>
+            <button class="arrow right">&#10095;</button>
+
+            <!-- Dots -->
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA CARDS -->
+    <section class="cta-cards">
+        <div class="card">
+            <i class="fas fa-users"></i>
+            <h3>Join NCCS</h3>
+            <p>Join our community</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Event Calendar</h3>
+            <p>Join our activities</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-hand-holding-heart"></i>
+            <h3>Volunteer</h3>
+            <p>Make a difference</p>
+        </div>
+    </section>
+
+    <!-- Replace your existing <section class="programs"> with this updated version -->
+
+    <!-- Updated Programs & Services Section - White Background, Arrows Bottom Right -->
+    <section class="programs-services">
+        <h2>Our Programs & Services</h2>
+        <p class="subtitle">
+            Engaging communities through culture, service, and sports.
+        </p>
+
+        <div class="programs-carousel">
+            <div class="programs-viewport">
+                <div class="programs-track">
+                    <!-- Card 1 -->
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <div class="red-circle"></div>
+                        </div>
+                        <h3>NEPALI CULTURAL EVENTS</h3>
+                        <p>
+                            Celebrating Nepali heritage through festivals, music, arts, and
+                            hands-on community workshops.
+                        </p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <div class="red-circle"></div>
+                        </div>
+                        <h3>COMMUNITY VOLUNTEER</h3>
+                        <p>
+                            Engage in meaningful projects that give back to society from
+                            food drives to mentorship programs — together making a real
+                            difference.
+                        </p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <div class="red-circle"></div>
+                        </div>
+                        <h3>ANNUAL SPORTS</h3>
+                        <p>
+                            Join our seasonal sports tournaments that foster healthy
+                            competition, teamwork, wellness, and strong community spirit.
+                        </p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <div class="red-circle"></div>
+                        </div>
+                        <h3>YOUTH LEADERSHIP EVENTS</h3>
+                        <p>
+                            Empowering the next generation through leadership,
+                            entrepreneurship, and skill-building workshops—with guidance
+                            from NCCS.
+                        </p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <div class="red-circle"></div>
+                        </div>
+                        <h3>YOUTH LEADERSHIP EVENTS</h3>
+                        <p>
+                            Empowering the next generation through leadership,
+                            entrepreneurship, and skill-building workshops—with guidance
+                            from NCCS.
+                        </p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <div class="red-circle"></div>
+                        </div>
+                        <h3>YOUTH LEADERSHIP EVENTS</h3>
+                        <p>
+                            Empowering the next generation through leadership,
+                            entrepreneurship, and skill-building workshops—with guidance
+                            from NCCS.
+                        </p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows - Positioned Bottom Right -->
+            <div class="programs-nav">
+                <button class="programs-arrow left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="programs-arrow right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <hr />
+    <!-- Upcoming Events Section - Matches the Image Exactly -->
+    <section class="upcoming-events">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <p class="subtitle">
+                Stay informed with our latest community activities.
+            </p>
+
+            <!-- Category Filters -->
+            <div class="event-filters">
+                <a href="#" class="filter active">ALL</a>
+                <a href="#" class="filter">SPORTS</a>
+                <a href="#" class="filter">MEETING</a>
+                <a href="#" class="filter">COMMUNITY</a>
+            </div>
+
+            <div class="events-layout">
+                <!-- Calendar -->
+                <div class="event-calendar">
+                    <div class="calendar-header">
+                        <h3 id="calendar-month-year">NOVEMBER 2025</h3>
+                        <div class="calendar-nav">
+                            <button class="cal-prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="cal-next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>SUN</th>
+                                <th>MON</th>
+                                <th>TUE</th>
+                                <th>WED</th>
+                                <th>THU</th>
+                                <th>FRI</th>
+                                <th>SAT</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendar-body">
+                            <!-- Will be filled by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Event List -->
+                <!-- Updated Event List with Scrollable White Container -->
+                <div class="event-list-wrapper">
+                    <div class="event-list">
+                        <!-- Repeat event items as needed -->
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">SAT, 26 NOV</span>
+                                <div class="event-title">HIMALAYAN MELA</div>
+                                <div class="event-location">Main Hall, Downtown Community Center</div>
+                            </div>
+                            <a href="#" class="view-event-btn">VIEW EVENT</a>
+                        </div>
+
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">SAT, 26 NOV</span>
+                                <div class="event-title">HIMALAYAN MELA</div>
+                                <div class="event-location">Main Hall, Downtown Community Center</div>
+                            </div>
+                            <a href="#" class="view-event-btn">VIEW EVENT</a>
+                        </div>
+
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">SAT, 26 NOV</span>
+                                <div class="event-title">HIMALAYAN MELA</div>
+                                <div class="event-location">Main Hall, Downtown Community Center</div>
+                            </div>
+                            <a href="#" class="view-event-btn">VIEW EVENT</a>
+                        </div>
+
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">SAT, 26 NOV</span>
+                                <div class="event-title">HIMALAYAN MELA</div>
+                                <div class="event-location">Main Hall, Downtown Community Center</div>
+                            </div>
+                            <a href="#" class="view-event-btn">VIEW EVENT</a>
+                        </div>
+
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">SAT, 26 NOV</span>
+                                <div class="event-title">HIMALAYAN MELA</div>
+                                <div class="event-location">Main Hall, Downtown Community Center</div>
+                            </div>
+                            <a href="#" class="view-event-btn">VIEW EVENT</a>
+                        </div>
+
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">SAT, 26 NOV</span>
+                                <div class="event-title">HIMALAYAN MELA</div>
+                                <div class="event-location">Main Hall, Downtown Community Center</div>
+                            </div>
+                            <a href="#" class="view-event-btn">VIEW EVENT</a>
+                        </div>
+
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">SAT, 26 NOV</span>
+                                <div class="event-title">HIMALAYAN MELA</div>
+                                <div class="event-location">Main Hall, Downtown Community Center</div>
+                            </div>
+                            <a href="#" class="view-event-btn">VIEW EVENT</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+    </section>
+    <hr />
+    <!-- Latest Updates Section - Matches the Image Exactly -->
+    <section class="latest-updates">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Updates</h2>
+                <p class="subtitle">Stay up-to-date with our latest activities.</p>
+                <a href="#" class="view-more-link">VIEW MORE</a>
+            </div>
+
+            <!-- Updates Carousel -->
+            <div class="updates-carousel">
+                <div class="updates-viewport">
+                    <div class="updates-track">
+                        <!-- Update Card 1 -->
+                        <div class="update-card">
+                            <div class="update-image-wrapper">
+                                <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela">
+                                <span class="update-badge">UPDATES</span>
+                            </div>
+                            <div class="update-content">
+                                <div class="update-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    Nov 26, 2025
+                                </div>
+                                <h3>NCCS Annual Himalayan Mela</h3>
+                                <p>Hundreds gathered to celebrate Nepali culture, enjoy performances, and participate in
+                                    workshops highlighting arts and traditions.</p>
+                                <div class="update-footer">
+                                    <a href="#" class="show-more-btn">SHOW MORE</a>
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Update Card 2 -->
+                        <div class="update-card">
+                            <div class="update-image-wrapper">
+                                <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela">
+                                <span class="update-badge">UPDATES</span>
+                            </div>
+                            <div class="update-content">
+                                <div class="update-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    Nov 26, 2025
+                                </div>
+                                <h3>NCCS Annual Himalayan Mela</h3>
+                                <p>Hundreds gathered to celebrate Nepali culture, enjoy performances, and participate in
+                                    workshops highlighting arts and traditions.</p>
+                                <div class="update-footer">
+                                    <a href="#" class="show-more-btn">SHOW MORE</a>
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Update Card 3 -->
+                        <div class="update-card">
+                            <div class="update-image-wrapper">
+                                <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela">
+                                <span class="update-badge">UPDATES</span>
+                            </div>
+                            <div class="update-content">
+                                <div class="update-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    Nov 26, 2025
+                                </div>
+                                <h3>NCCS Annual Himalayan Mela</h3>
+                                <p>Hundreds gathered to celebrate Nepali culture, enjoy performances, and participate in
+                                    workshops highlighting arts and traditions.</p>
+                                <div class="update-footer">
+                                    <a href="#" class="show-more-btn">SHOW MORE</a>
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="update-card">
+                            <div class="update-image-wrapper">
+                                <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela">
+                                <span class="update-badge">UPDATES</span>
+                            </div>
+                            <div class="update-content">
+                                <div class="update-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    Nov 26, 2025
+                                </div>
+                                <h3>NCCS Annual Himalayan Mela</h3>
+                                <p>Hundreds gathered to celebrate Nepali culture, enjoy performances, and participate in
+                                    workshops highlighting arts and traditions.</p>
+                                <div class="update-footer">
+                                    <a href="#" class="show-more-btn">SHOW MORE</a>
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows - Bottom Right -->
+                <div class="updates-nav">
+                    <button class="updates-arrow left"><i class="fas fa-chevron-left"></i></button>
+                    <button class="updates-arrow right"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Board of Directors Section - Matches the Image Exactly -->
+    <section class="board-directors">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Board of Directors</h2>
+                <div class="header-subtitle">
+                    <span class="current-directors">CURRENT DIRECTORS</span>
+                    <a href="#" class="view-all-link">VIEW ALL</a>
+                </div>
+            </div>
+
+            <!-- Directors Carousel -->
+            <div class="directors-carousel">
+                <div class="directors-viewport">
+                    <div class="directors-track">
+                        <!-- Director 1 -->
+                        <div class="director-card">
+                            <div class="director-image">
+                                <img src="images/director.png" alt="Bimal Basnet">
+                            </div>
+                            <div class="director-info">
+                                <span class="position">CHAIRPERSON</span>
+                                <h3>BIMAL BASNET</h3>
+                            </div>
+                        </div>
+
+                        <!-- Director 2 -->
+                        <div class="director-card">
+                            <div class="director-image">
+                                <img src="images/director.png" alt="Sudarshan Sapkota">
+                            </div>
+                            <div class="director-info">
+                                <span class="position">PRESIDENT</span>
+                                <h3>SUDARSHAN SAPKOTA</h3>
+                            </div>
+                        </div>
+
+                        <!-- Director 3 -->
+                        <div class="director-card">
+                            <div class="director-image">
+                                <img src="images/director.png" alt="Gyanu Shah">
+                            </div>
+                            <div class="director-info">
+                                <span class="position">VICE PRESIDENT</span>
+                                <h3>GYANU SHAH</h3>
+                            </div>
+                        </div>
+
+                        <!-- Director 4 -->
+                        <div class="director-card">
+                            <div class="director-image">
+                                <img src="images/director.png" alt="Tika Ram Paudel">
+                            </div>
+                            <div class="director-info">
+                                <span class="position">GENERAL SECRETARY</span>
+                                <h3>TIKA RAM PAUDEL</h3>
+                            </div>
+                        </div>
+
+                        <!-- Director 5 -->
+                        <div class="director-card">
+                            <div class="director-image">
+                                <img src="images/director.png" alt="Kaushal Niraula">
+                            </div>
+                            <div class="director-info">
+                                <span class="position">SECRETARY</span>
+                                <h3>KAUSHAL NIRAULA</h3>
+                            </div>
+                        </div>
+
+                        <div class="director-card">
+                            <div class="director-image">
+                                <img src="images/director.png" alt="Kaushal Niraula">
+                            </div>
+                            <div class="director-info">
+                                <span class="position">SECRETARY</span>
+                                <h3>KAUSHAL NIRAULA</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows - Bottom Right -->
+                <div class="directors-nav">
+                    <button class="directors-arrow left"><i class="fas fa-chevron-left"></i></button>
+                    <button class="directors-arrow right"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe to our Newsletter!</h2>
+            <p class="subtitle">Become part of a growing community dedicated to culture and service.</p>
+
+            <form class="newsletter-form">
+                <div class="input-wrapper">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="ENTER YOUR EMAIL" required>
+                </div>
+                <button type="submit">SUBSCRIBE NOW</button>
+            </form>
+        </div>
+    </section>
+    
+    
+    <!-- Footer Section - Matches the Image Exactly -->
+<footer class="footer">
+    <div class="container footer-container">
+        <!-- Logo + Description -->
+        <div class="footer-logo-desc">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="NCCS Logo"> <!-- Replace with your actual logo path -->
+            </div>
+            <p class="footer-description">
+                Nepalese Canadian Community Services is dedicated to preserving culture, providing services, and building a stronger community.
+            </p>
+        </div>
+
+        <!-- Columns -->
+        <div class="footer-columns">
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Program & Services</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Membership</a></li>
+                    <li><a href="#">Volunteer</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Documents</a></li>
+                    <li><a href="#">Latest Updates</a></li>
+                    <li><a href="#">Media Coverages</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Help Desk</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <p class="address">123 Community Street, Toronto, ON</p>
+                <p class="phone">+1 (234) 567-890</p>
+                <p class="email"><a href="mailto:info@nccs.ca">info@nccs.ca</a></p>
+                <p class="hours">Mon-Fri | 9AM-5PM</p>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="copyright">
+                &copy; 2025 Nepalese Canadian Community Services. All Rights Reserved.
+            </p>
+            <ul class="legal-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

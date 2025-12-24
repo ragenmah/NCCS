@@ -1,0 +1,18 @@
+.btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary { background: #b4001e; color: #fff; }
+.btn-outline { border: 1px solid #b4001e; color: #b4001e; background: transparent; }
+.btn-dark { background: #111; color: #fff; }
+
+.program-grid,
+.quick-actions,
+.updates-grid,
+.directors-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}

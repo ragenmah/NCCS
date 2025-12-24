@@ -1,0 +1,17 @@
+.hero {
+  background: #b4001e;
+  color: #fff;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.hero h1 { font-size: 3rem; }
+
+.quick-actions .action-card,
+.program-card,
+.update-card,
+.director-card {
+  background: #fff;
+  padding: 25px;
+  text-align: center;
+}
