@@ -953,7 +953,7 @@ body {
 }
 
 hr {
-    color: gray;
+    color: #717171;
 }
 
 .icon {
@@ -974,6 +974,8 @@ hr {
     color: #000;
     padding: 80px 0;
     text-align: center;
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
 }
 
 .upcoming-events h2 {
