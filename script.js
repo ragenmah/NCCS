@@ -2,13 +2,22 @@
 
 // Example JS for interactivity, e.g., dynamic calendar or form submission
 document.addEventListener("DOMContentLoaded", () => {
-  // Populate calendar dynamically if needed
-  function populateCalendar(month, year) {
-    // Logic to generate calendar table
-    // This is a placeholder; implement as per needs
-  }
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector(".nav-menu");
 
-  populateCalendar(11, 2025); // November 2025
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    toggle.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".dropdown > a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        link.parentElement.classList.toggle("open");
+      }
+    });
+  });
 
   // Newsletter form submission (placeholder)
   const form = document.querySelector(".newsletter form");

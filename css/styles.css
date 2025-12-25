@@ -164,14 +164,6 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .nav ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    /* Add mobile menu toggle if needed later */
-}
 
 /* =========================
    HEADER & NAV LAYOUT
@@ -514,27 +506,6 @@ body {
     .search-input-wrapper input {
         font-size: 18px;
         /* Prevent zoom on iOS */
-    }
-}
-
-/* =========================
-   MOBILE SUPPORT (OPTIONAL)
-========================= */
-
-@media (max-width: 992px) {
-
-    .nav ul {
-        flex-direction: column;
-    }
-
-    .dropdown-menu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-    }
-
-    .dropdown.open .dropdown-menu {
-        display: block;
     }
 }
 

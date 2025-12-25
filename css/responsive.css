@@ -1,0 +1,127 @@
+.nav-toggle {
+    display: none;
+
+    border: none;
+    color: #000;
+    /* font-size: 20px;
+    padding: 10px; */
+    /* border-radius: 10px; */
+    cursor: pointer;
+}
+
+.nav-toggle:hover {
+    /* background: #0b5ed7; */
+    transform: translateY(-1px);
+}
+
+.nav-toggle:active {
+    transform: scale(.96);
+}
+
+/* icon animation */
+.nav-toggle i {
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+.close-icon {
+    opacity: 0;
+    position: absolute;
+}
+
+/* show bars by default */
+.open-icon {
+    opacity: 1;
+}
+
+/* when button becomes active → swap icons */
+.nav-toggle.active .open-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.nav-toggle.active .close-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/* animation */
+.nav-toggle i {
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+/* Show toggle on mobile */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .nav {
+        padding: 10px 15px;
+        align-items: end;
+        justify-content: end;
+    }
+
+    .nav-toggle {
+        display: block;
+        right: 10px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .3s ease;
+        border-top: 1px solid #eee;
+    }
+
+    .nav-menu.open {
+        max-height: 600px;
+        /* expand */
+    }
+
+    .nav ul {
+        flex-direction: column;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .nav ul li {
+        width: 100%;
+    }
+
+    .dropdown-menu,
+    .wide-dropdown {
+        position: static;
+        display: none;
+        padding: 5px 15px;
+        box-shadow: none;
+    }
+
+    .dropdown.open>.dropdown-menu {
+        display: block;
+    }
+
+    /* Make dropdown arrows clickable instead of hover */
+    .dropdown>a {
+        justify-content: space-between;
+    }
+
+
+
+}
