@@ -308,9 +308,10 @@ body {
 
 .dropdown-header {
     padding: 30px 20px 10px;
-    font-size: 12px;
+    font-size: 10px;
     letter-spacing: 1px;
     color: #555;
+    font-weight: normal;
     text-transform: uppercase;
 }
 
@@ -397,7 +398,7 @@ body {
     width: 100vw;
 
     background: #fff;
-    border: 1px solid #eee;
+    /* border: 1px solid #eee; */
     /* border-top: 3px solid #c00;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); */
     z-index: 999;
@@ -409,15 +410,18 @@ body {
 .search-input-wrapper {
     position: relative;
     margin-bottom: 20px;
+    max-width: 1230px;
+    margin: 0 auto;
 }
 
 .search-input-wrapper input {
     width: 100%;
     padding: 12px 12px 12px 40px;
     font-size: 16px;
-    border: 1px solid #ddd;
+    border: 0px solid #ddd;
     border-radius: 4px;
     outline: none;
+
 }
 
 .search-input-wrapper input:focus {
@@ -430,18 +434,22 @@ body {
     top: 50%;
     transform: translateY(-50%);
     color: #999;
-    font-size: 18px;
+    font-size: 27px;
 }
 
 /* Suggestions */
 .suggestions-header {
     text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;
+    font-weight: normal;
+    font-size: 10px;
     color: #333;
+    padding-top: 10px;
+    padding-right: 10px;
     margin-bottom: 10px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #eee;
+    /* border-bottom: 1px solid #eee; */
+    max-width: 1150px;
+    margin: 0 auto;
 }
 
 .search-suggestions ul {
@@ -472,8 +480,9 @@ body {
 .dropdown-columns {
     display: flex;
     align-items: flex-start;
-    /* gap: 25px; */
-    /* max-width: 1200px; */
+    gap: 25px;
+    max-width: 900px;
+
     /* margin: 0 auto 30px; */
     /* padding: 0 0px; */
 }

@@ -405,6 +405,11 @@
 
 }
 
+.update-card.featured-card .update-badge {
+    font-size: 18px;
+
+}
+
 .update-card.featured-card .update-date {
     font-size: 19px;
 }
@@ -425,6 +430,17 @@
     size: 27px;
 }
 
+
+.update-card.featured-card .update-image-wrapper img {
+    width: 100%;
+    height: 480px;
+
+}
+
+.update-card.featured-card .update-footer {
+    padding-top: 75px;
+
+}
 
 
 /* Responsive Adjustments */
