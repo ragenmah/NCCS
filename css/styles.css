@@ -256,6 +256,10 @@ body {
     transform: rotate(180deg);
 }
 
+.nav .active {
+    color: #B10020;
+}
+
 /* =========================
    FULL WIDTH DROPDOWN MENU
 ========================= */
@@ -284,6 +288,8 @@ body {
     display: block;
 }
 
+
+
 /* =========================
    DROPDOWN CONTENT CENTERING
 ========================= */
@@ -294,6 +300,7 @@ body {
     /* site width */
     margin: 0 auto;
 }
+
 
 /* =========================
    DROPDOWN HEADER
@@ -548,21 +555,52 @@ body {
     display: block;
 }
 
-.slide h1 {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.2;
+.hero-content,
+.member-content {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+    z-index: 2;
 }
 
-.slide p {
-    margin: 20px 0 40px;
-    font-size: 18px;
+.member-content {
+    top: 40%;
+}
+
+.hero-content h1,
+.member-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    /* text-transform: uppercase; */
+}
+
+.hero-paragraph {
+    margin: 0 auto 40px;
+    font-size: 24px;
+    font-weight: 200;
+    line-height: 1.7;
+    max-width: 800px;
+    /* Controls paragraph width - fits nicely in middle */
+    padding: 0 20px;
+}
+
+.hero-container {
+    margin-top: 20px;
+    height: 340px;
+    width: 100%;
+    background-color: #fff;
 }
 
 /* BUTTONS */
 .hero-buttons {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
 }
 
@@ -583,6 +621,11 @@ body {
 .btn-outline {
     border: 2px solid #fff;
     color: #fff;
+}
+
+.btn-outline:hover {
+    background-color: #fff;
+    color: #B10020;
 }
 
 /* ARROWS */
@@ -617,7 +660,7 @@ body {
 /* DOTS */
 .dots {
     position: absolute;
-    top: 75vh;
+    top: 55vh;
     /* distance from bottom of hero */
     left: 50%;
     transform: translateX(-50%);
@@ -1656,6 +1699,7 @@ hr {
     color: #000;
     padding: 80px 0;
     text-align: center;
+    border-top: 1px solid #E5E5E5;
 }
 
 .newsletter .container {

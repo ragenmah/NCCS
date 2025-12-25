@@ -1,0 +1,254 @@
+.board-page {
+    background: #fff;
+    color: #000;
+    padding: 60px 0;
+    min-height: 100vh;
+}
+
+.board-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Page Header */
+/* Page Header - Title + Tabs + Year Select */
+.page-header {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.page-header h1 {
+    font-size: 44px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+/* Bottom section: tabs + year select + shared border */
+.header-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #E5E5E5;
+    /* Single shared border */
+}
+
+/* Director Tabs - Sit directly on the border line */
+.director-tabs {
+    display: flex;
+    gap: 40px;
+    border-bottom: 3px solid #eee;
+}
+
+.director-tabs .tab {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.director-tabs .tab.active {
+    color: #000;
+    border-bottom: 3px solid #c00;
+}
+
+.director-tabs .tab:hover {
+    color: #c00;
+}
+
+/* Year Select - Hidden by default */
+/* .year-select select {
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+}
+
+.year-select select option {
+    background: #fff;
+    color: #000;
+    align-items: start;
+} */
+
+
+.year-select {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.year-select.visible {
+    display: block;
+    opacity: 1;
+}
+
+.year-select select {
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
+    padding: 12px 40px 12px 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    min-width: 200px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='10' viewBox='0 0 16 10'%3E%3Cpath fill='%23000' d='M0 0l8 10 8-10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 12px;
+}
+
+.year-select select option {
+    background: #000;
+    color: #000;
+}
+
+/* Team Tabs (Executive/Board/Advisors) */
+.team-tabs {
+    display: flex;
+    justify-content: start;
+    gap: 60px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 15px;
+}
+
+.team-tab {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.team-tab.active {
+    color: #000;
+    /* border-bottom: 3px solid #c00; */
+}
+
+.team-tab:hover {
+    color: #c00;
+}
+
+/* Directors Grid */
+.directors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+
+}
+
+/* Director Card */
+.board-director-card {
+    background: #fff;
+    /* width: 280px; */
+    overflow: hidden;
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); */
+    transition: transform 0.3s;
+}
+
+.director-card:hover {
+    /* transform: translateY(-10px); */
+
+}
+
+.director-image {
+    height: 350px;
+    overflow: hidden;
+}
+
+.director-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.board-director-card:hover .director-image img {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.director-info {
+    background: #fff;
+    padding: 25px 20px;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.position {
+    display: block;
+    color: #000;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.director-info h3 {
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .directors-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .team-tabs {
+        gap: 30px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .director-tabs {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .team-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .team-tab {
+        padding: 10px 0;
+    }
+}

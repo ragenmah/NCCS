@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nepalese Canadian Community Services</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -44,7 +44,7 @@
             </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="active">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li class="dropdown">
                         <a href="#">Directors <i class="fas fa-chevron-down"></i></a>
@@ -52,10 +52,10 @@
                             <div class="dropdown-header">Explore Directors</div>
                             <ul class="dropdown-list">
                                 <li>
-                                    <a href="#"><i class="fas fa-arrow-right"></i> Life Members</a>
+                                    <a href="members.html"><i class="fas fa-arrow-right"></i> Life Members</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-arrow-right"></i> General Members</a>
+                                    <a href="members.html"><i class="fas fa-arrow-right"></i> General Members</a>
                                 </li>
                             </ul>
                         </div>
@@ -139,30 +139,32 @@
         <div class="carousel">
             <!-- Slide -->
             <div class="slide active">
-                <h1>Connecting Communities<br />Preserving Culture.</h1>
-                <p>
-                    Empowering communities, preserving culture, creating opportunity.
-                </p>
+                <div class="hero-content">
+                    <h1>Connecting Communities<br />Preserving Culture.</h1>
+                    <p class="hero-paragraph">
 
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-light">Learn More</a>
-                    <a href="#" class="btn btn-outline">Become a Member</a>
+                        Empowering communities, preserving culture, creating opportunity.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-light">Learn More</a>
+                        <a href="#" class="btn btn-outline">Become a Member</a>
+                    </div>
                 </div>
+
+                <!-- Arrows -->
+                <button class="arrow left">&#10094;</button>
+                <button class="arrow right">&#10095;</button>
+
+                <!-- Dots -->
+
             </div>
-
-            <!-- Arrows -->
-            <button class="arrow left">&#10094;</button>
-            <button class="arrow right">&#10095;</button>
-
-            <!-- Dots -->
-
-        </div>
-        <div class="dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
     </section>
 
     <!-- CTA CARDS -->
@@ -634,7 +636,7 @@
             <div class="section-header">
                 <h2>Our Board of Directors</h2>
                 <p class="header-subtitle">CURRENT DIRECTORS</p>
-                <a href="#" class="view-all-link ">VIEW ALL</a>
+                <a href="members.html" class="view-all-link ">VIEW ALL</a>
             </div>
 
 

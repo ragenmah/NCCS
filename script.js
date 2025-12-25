@@ -50,10 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".dropdown").forEach((dropdown) => {
     dropdown.addEventListener("click", (e) => {
-      //   if (window.innerWidth <= 992) {
+      // If the user clicked a link inside, allow navigation
+      if (e.target.tagName === "A" && e.target.getAttribute("href") !== "#") {
+        return;
+      }
+
       e.preventDefault();
       dropdown.classList.toggle("open");
-      //   }
     });
   });
 
