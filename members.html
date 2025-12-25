@@ -173,6 +173,44 @@
 
 
 
+    <!-- Modal Popup - Hidden by default -->
+    <div class="director-modal" id="director-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+
+            <div class="modal-body">
+                <div>
+                    <div class="modal-image">
+                        <img src="bimal-basnet.jpg" alt="Bimal Basnet" id="modal-img">
+                    </div>
+                    <div class="modal-contact">
+                        <p><strong>Email:</strong> basnetbm@gmail.com</p>
+                        <p><strong>Phone:</strong> +1 (647) 740-6067</p>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h2 class="modal-position">CHAIRPERSON</h2>
+                    <h3 class="modal-name">BIMAL BASNET</h3>
+
+                    <p class="modal-bio">
+                        Currently serving as the Chairperson of Nepalese Canadian Community Services (NCCS) and
+                        General Secretary of the Toronto Nepalese Sports Club (TNSC), he brings strong leadership and
+                        community engagement experience to his roles. He previously served as a Board Director for both
+                        Srijansil Nepali Samaj and NCCS. A reliable and trustworthy Realtor with over five years of
+                        professional experience at Homelife 247 Realty Inc., he has been assisting clients across the
+                        Greater
+                        Toronto Area (GTA). He holds a Master's Degree in Physics from Nepal, a Diploma in Computer
+                        Networking from Seneca College, and Real Estate Education from Humber College. Dedicated to
+                        building meaningful relationships, empowering communities, and making a positive impact in the
+                        lives of others, he continues to inspire trust and collaboration through his work.
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="board-page">
         <div class="container">
             <!-- Page Title & Filters -->
@@ -390,6 +428,50 @@
                 document.querySelectorAll('.team-tabs .team-tab').forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
                 // Future: Load content based on team type
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Modal Functionality
+            const modal = document.getElementById('director-modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalPosition = document.querySelector('.modal-position');
+            const modalName = document.querySelector('.modal-name');
+            const modalBio = document.querySelector('.modal-bio');
+            const modalContact = document.querySelector('.modal-contact');
+            const closeBtn = document.querySelector('.modal-close');
+
+            document.querySelectorAll('.board-director-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    // Example data - in real app, use data attributes or fetch from object
+                    modalImg.src = card.querySelector('.director-image img').src;
+                    modalPosition.textContent = card.querySelector('.position').textContent;
+                    modalName.textContent = card.querySelector('h3').textContent;
+
+                    // Set bio and contact (you can store these in data attributes)
+                    modalBio.textContent = "Currently serving as the Chairperson of Nepalese Canadian Community Services (NCCS) and General Secretary of the Toronto Nepalese Sports Club (TNSC), he brings strong leadership and community engagement experience to his roles. He previously served as a Board Director for both Srijansil Nepali Samaj and NCCS. A reliable and trustworthy Realtor with over five years of professional experience at Homelife 247 Realty Inc., he has been assisting clients across the Greater Toronto Area (GTA). He holds a Master's Degree in Physics from Nepal, a Diploma in Computer Networking from Seneca College, and Real Estate Education from Humber College. Dedicated to building meaningful relationships, empowering communities, and making a positive impact in the lives of others, he continues to inspire trust and collaboration through his work.";
+
+                    modalContact.innerHTML = `
+            <p><strong>Email:</strong> basnetbm@gmail.com</p>
+            <p><strong>Phone:</strong> +1 (647) 740-6067</p>
+        `;
+
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent background scroll
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close on background click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
             });
         });
     </script>
