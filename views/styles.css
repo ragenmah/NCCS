@@ -1467,8 +1467,10 @@ hr {
 .board-directors {
     background-color: #B10020;
     /* background: #fff; */
-    color: #333;
-    padding: 80px 0;
+    /* color: #333; */
+    color: #fff;
+    padding-top: 50px;
+    padding-bottom: 70px;
     text-align: center;
 }
 
@@ -1477,8 +1479,9 @@ hr {
 }
 
 .section-header h2 {
-    font-size: 3rem;
+    font-size: 40px;
     font-weight: bold;
+
     margin-bottom: 15px;
 }
 
@@ -1487,8 +1490,9 @@ hr {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    font-size: 1.2rem;
+    font-size: 18px;
     text-transform: uppercase;
+    font-weight: 300;
 }
 
 .current-directors {
@@ -1496,12 +1500,14 @@ hr {
 }
 
 .view-all-link {
-    color: #000;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    padding: 8px 20px;
-    border: 2px solid #fff;
-    transition: all 0.3s;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 /* .view-all-link:hover {
@@ -1512,18 +1518,37 @@ hr {
 /* Carousel */
 .directors-carousel {
     position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding-left: 100px;
+    /* margin: 0 auto; */
 }
 
+/* Make it horizontally scrollable */
 .directors-viewport {
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    /* scrollbar-width: thin; */
+    /* Firefox */
+}
+
+/* Optional — show nice scroll on WebKit */
+/* .directors-viewport::-webkit-scrollbar {
+    height: 6px;
+} */
+
+.directors-viewport::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.directors-viewport::-webkit-scrollbar {
+    display: none;
 }
 
 .directors-track {
     display: flex;
     gap: 20px;
-    transition: transform 0.6s ease-in-out;
+    flex-wrap: nowrap;
 }
 
 /* Director Card */
@@ -1532,6 +1557,8 @@ hr {
     background: #fff;
     color: #333;
     overflow: hidden;
+    min-width: 260px;
+    flex-shrink: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
@@ -1552,8 +1579,9 @@ hr {
 }
 
 .director-info {
-    background: #000;
+    background: #B10020;
     color: #fff;
+    border: 1px solid #eee;
     padding: 20px 15px;
     text-align: center;
 }
@@ -1635,17 +1663,17 @@ hr {
 }
 
 .newsletter h2 {
-    font-size: 3rem;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 15px;
-    text-transform: uppercase;
-    color: #999;
+    /* text-transform: uppercase; */
+    /* color: #000; */
 }
 
 .newsletter .subtitle {
-    font-size: 1.3rem;
-    color: #aaa;
-    margin-bottom: 50px;
+    font-size: 16px;
+    color: #717171;
+    margin-bottom: 40px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -1661,7 +1689,7 @@ hr {
     /* No gap - they should touch */
     max-width: 800px;
     margin: 0 auto;
-    height: 80px;
+    height: 100px;
     /* Increased height for better proportions */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     /* Optional: subtle shadow for depth */
@@ -1671,7 +1699,7 @@ hr {
     position: relative;
     flex: 1;
     max-width: 550px;
-    background: #c00;
+    background: #B10020;
     /* Solid red background */
     height: 100%;
 }
@@ -1697,7 +1725,7 @@ hr {
     border: none;
     color: #fff;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 500;
     text-transform: uppercase;
     outline: none;
 }
@@ -1705,22 +1733,24 @@ hr {
 .input-wrapper input::placeholder {
     color: #fff;
     opacity: 0.8;
-    font-weight: bold;
+    font-weight: 500;
     text-transform: uppercase;
 }
 
-.input-wrapper input:focus {
-    /* Optional: subtle focus effect */
+/* .input-wrapper input:focus {
     box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.3);
-}
+} */
 
 /* Subscribe Button */
 .newsletter-form button {
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0 50px;
+    height: 100%;
     background: #fff;
-    color: #c00;
-    border: none;
+    color: #B10020;
+    border: 20px solid #B10020;
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -1793,7 +1823,7 @@ hr {
 
 .footer-description {
     line-height: 1.7;
-    color: #888;
+    color: #fff;
 }
 
 .footer-columns {
@@ -1822,7 +1852,7 @@ hr {
 }
 
 .footer-column a {
-    color: #aaa;
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -1838,11 +1868,11 @@ hr {
 .hours {
     display: block;
     margin-bottom: 12px;
-    color: #aaa;
+    color: #fff;
 }
 
 .email a {
-    color: #aaa;
+    color: #fff;
     text-decoration: none;
 }
 
