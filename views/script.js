@@ -151,46 +151,63 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", update);
   update();
 });
-
 document.addEventListener("DOMContentLoaded", () => {
   const monthYearDisplay = document.getElementById("calendar-month-year");
   const calendarBody = document.getElementById("calendar-body");
   const prevBtn = document.querySelector(".cal-prev");
   const nextBtn = document.querySelector(".cal-next");
 
-  // List of events with dates (format: YYYY-MM-DD)
-  const events = [
-    "2025-11-26",
-    "2025-11-30",
-    "2025-12-15",
-    "2025-12-25",
-    // Add more real events from your database later
-  ];
+  // Tooltip panel BELOW the calendar
+  const tooltip = document.querySelector(".event-tooltip");
+  tooltip.style.display = "none";
 
-  let currentDate = new Date(2025, 10); // Start: November 2025 (month is 0-indexed)
+  function showTooltipBelow(data) {
+    tooltip.innerHTML = `
+      <div class="calendar-event-date">${data.dayLabel}</div>
+      <div class="calendar-event-title">${data.title}</div>
+      <div class="calendar-event-location">
+        <i class="fas fa-map-marker-alt"></i> ${data.location}
+      </div>
+    `;
+    tooltip.style.display = "block";
+  }
+
+  function hideTooltipBelow() {
+    tooltip.style.display = "none";
+  }
+
+  // Event list with details
+  const events = {
+    "2025-11-26": {
+      dayLabel: "SAT, 26 NOV",
+      title: "HIMALAYAN MELA",
+      location: "Main Hall, Downtown Community Center",
+    },
+    "2025-11-30": {
+      dayLabel: "SUN, 30 NOV",
+      title: "Community Fundraiser",
+      location: "City Cultural Hall",
+    },
+  };
+
+  let currentDate = new Date(2025, 10);
 
   function renderCalendar() {
-    // Clear previous content
     calendarBody.innerHTML = "";
 
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
 
-    // Update header
     const monthName = currentDate
       .toLocaleString("default", { month: "long" })
       .toUpperCase();
     monthYearDisplay.textContent = `${monthName} ${year}`;
 
-    // First day of the month
     const firstDay = new Date(year, month, 1);
-    const startingDayOfWeek = firstDay.getDay(); // 0 = Sunday
-
-    // Last day of the month
+    const startingDayOfWeek = firstDay.getDay();
     const lastDate = new Date(year, month + 1, 0);
     const totalDays = lastDate.getDate();
 
-    // Today's date for highlighting
     const today = new Date();
     const isCurrentMonth =
       today.getFullYear() === year && today.getMonth() === month;
@@ -199,37 +216,24 @@ document.addEventListener("DOMContentLoaded", () => {
     let row = document.createElement("tr");
     let dayCount = 1;
 
-    // Empty cells before the first day
+    // Empty cells before first day
     for (let i = 0; i < startingDayOfWeek; i++) {
       row.innerHTML += "<td></td>";
     }
 
-    // Fill the days
+    // Fill first week
     for (let i = startingDayOfWeek; i < 7; i++) {
       if (dayCount <= totalDays) {
-        const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(
-          dayCount
-        ).padStart(2, "0")}`;
-        const hasEvent = events.includes(dateStr);
-
-        const cell = document.createElement("td");
-        cell.textContent = dayCount;
-
-        if (hasEvent) {
-          cell.classList.add("has-event");
-        }
-        if (isCurrentMonth && dayCount === todayDate) {
-          cell.classList.add("today");
-        }
-
-        // Make dates clickable (optional future feature)
-        cell.style.cursor = "pointer";
-        cell.addEventListener("click", () => {
-          alert(`You clicked ${monthName} ${dayCount}, ${year}`);
-          // Later: filter event list to show only events on this date
-        });
-
-        row.appendChild(cell);
+        row.appendChild(
+          createDayCell(
+            year,
+            month,
+            dayCount,
+            isCurrentMonth,
+            todayDate,
+            monthName
+          )
+        );
         dayCount++;
       }
     }
@@ -241,29 +245,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       for (let i = 0; i < 7; i++) {
         if (dayCount <= totalDays) {
-          const dateStr = `${year}-${String(month + 1).padStart(
-            2,
-            "0"
-          )}-${String(dayCount).padStart(2, "0")}`;
-          const hasEvent = events.includes(dateStr);
-
-          const cell = document.createElement("td");
-          cell.textContent = dayCount;
-
-          if (hasEvent) {
-            cell.classList.add("has-event");
-          }
-          if (isCurrentMonth && dayCount === todayDate) {
-            cell.classList.add("today");
-          }
-
-          cell.style.cursor = "pointer";
-          cell.addEventListener("click", () => {
-            alert(`You clicked ${monthName} ${dayCount}, ${year}`);
-            // Future: show events for this date
-          });
-
-          row.appendChild(cell);
+          row.appendChild(
+            createDayCell(
+              year,
+              month,
+              dayCount,
+              isCurrentMonth,
+              todayDate,
+              monthName
+            )
+          );
           dayCount++;
         } else {
           row.innerHTML += "<td></td>";
@@ -273,18 +264,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function createDayCell(
+    year,
+    month,
+    day,
+    isCurrentMonth,
+    todayDate,
+    monthName
+  ) {
+    const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(
+      day
+    ).padStart(2, "0")}`;
+    const hasEvent = events[dateStr];
+
+    const cell = document.createElement("td");
+    cell.textContent = day;
+    cell.style.cursor = "pointer";
+
+    if (isCurrentMonth && day === todayDate) {
+      cell.classList.add("today");
+    }
+
+    if (hasEvent) {
+      cell.classList.add("has-event");
+
+      cell.addEventListener("mouseenter", () => {
+        showTooltipBelow(events[dateStr]);
+      });
+
+      cell.addEventListener("mouseleave", hideTooltipBelow);
+    }
+
+    return cell;
+  }
+
   // Navigation
   prevBtn.addEventListener("click", () => {
     currentDate.setMonth(currentDate.getMonth() - 1);
+    tooltip.style.display = "none";
     renderCalendar();
   });
 
   nextBtn.addEventListener("click", () => {
     currentDate.setMonth(currentDate.getMonth() + 1);
+    tooltip.style.display = "none";
     renderCalendar();
   });
 
-  // Initial render
   renderCalendar();
 });
 
@@ -329,58 +355,57 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", updateUpdatesCarousel);
 });
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
-const directorsTrack = document.querySelector('.directors-track');
-const directorCards = document.querySelectorAll('.director-card');
-const directorsPrev = document.querySelector('.directors-arrow.left');
-const directorsNext = document.querySelector('.directors-arrow.right');
+  const directorsTrack = document.querySelector(".directors-track");
+  const directorCards = document.querySelectorAll(".director-card");
+  const directorsPrev = document.querySelector(".directors-arrow.left");
+  const directorsNext = document.querySelector(".directors-arrow.right");
 
-let directorIndex = 0;
-const cardsVisible = 5; // Show 5 directors on desktop
-const cardWidthWithGap = directorCards[0] ? directorCards[0].offsetWidth + 20 : 240;
-const maxDirectorIndex = Math.max(0, directorCards.length - cardsVisible);
+  let directorIndex = 0;
+  const cardsVisible = 5; // Show 5 directors on desktop
+  const cardWidthWithGap = directorCards[0]
+    ? directorCards[0].offsetWidth + 20
+    : 240;
+  const maxDirectorIndex = Math.max(0, directorCards.length - cardsVisible);
 
-function updateDirectorsCarousel() {
+  function updateDirectorsCarousel() {
     const offset = -directorIndex * cardWidthWithGap;
     directorsTrack.style.transform = `translateX(${offset}px)`;
-}
+  }
 
-directorsNext.addEventListener('click', () => {
+  directorsNext.addEventListener("click", () => {
     if (directorIndex < maxDirectorIndex) {
-        directorIndex++;
+      directorIndex++;
     } else {
-        directorIndex = 0;
+      directorIndex = 0;
     }
     updateDirectorsCarousel();
-});
+  });
 
-directorsPrev.addEventListener('click', () => {
+  directorsPrev.addEventListener("click", () => {
     if (directorIndex > 0) {
-        directorIndex--;
+      directorIndex--;
     } else {
-        directorIndex = maxDirectorIndex;
+      directorIndex = maxDirectorIndex;
     }
     updateDirectorsCarousel();
+  });
+
+  // Initial + resize
+  updateDirectorsCarousel();
+  window.addEventListener("resize", updateDirectorsCarousel);
 });
 
-// Initial + resize
-updateDirectorsCarousel();
-window.addEventListener('resize', updateDirectorsCarousel);
-});
-
-
-
-document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
+document
+  .querySelector(".newsletter-form")
+  ?.addEventListener("submit", function (e) {
     e.preventDefault();
     const email = this.querySelector('input[type="email"]').value.trim();
-    
+
     if (email) {
-        alert('Thank you for subscribing!');
-        this.reset();
+      alert("Thank you for subscribing!");
+      this.reset();
     } else {
-        alert('Please enter a valid email address.');
+      alert("Please enter a valid email address.");
     }
-});
+  });

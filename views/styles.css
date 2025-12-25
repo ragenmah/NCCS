@@ -8,9 +8,12 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont,
+        "SF Pro Text", "SF Pro Display",
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: white;
 }
 
 .container {
@@ -184,7 +187,8 @@ body {
     justify-content: center;
 }
 
-.nav ul {
+
+.nav>ul {
     display: flex;
     align-items: center;
     gap: 25px;
@@ -198,11 +202,9 @@ body {
     text-decoration: none;
     color: #000;
     font-size: 14px;
-    font-weight: 500;
     text-transform: uppercase;
 
-    font-size: 14px;
-    padding: 15px 0;
+    /* padding: 15px 0; */
 }
 
 
@@ -257,11 +259,9 @@ body {
     width: 100vw;
     margin-left: 0;
     background: #fff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); */
     z-index: 999;
 }
-
-
 
 
 /* Show on hover */
@@ -308,9 +308,9 @@ body {
 
 .dropdown-menu li a {
     display: block;
-    padding: 12px 0;
-    font-size: 15px;
-    font-weight: 600;
+    padding: 6px 0;
+    font-size: 14px;
+    font-weight: 500;
     text-transform: uppercase;
     color: #000;
     text-decoration: none;
@@ -320,11 +320,23 @@ body {
     color: #c00;
 }
 
+.dropdown-list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.dropdown-menu li a i {
+    color: gray;
+    padding-right: 8px;
+}
+
 /* Arrow */
 .arrow {
     margin-right: 10px;
     font-size: 16px;
     font-weight: bold;
+
 }
 
 /* =========================
@@ -365,21 +377,16 @@ body {
     top: 100%;
     left: 0;
     right: 0;
-    /* Align to the right side of the search icon */
-    width: 400px;
-    /* Wide enough for input + suggestions */
+    width: 100vw;
+
     background: #fff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     border: 1px solid #eee;
-    border-top: 3px solid #c00;
+    /* border-top: 3px solid #c00;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); */
     z-index: 999;
     padding: 20px;
 }
 
-.search-dropdown:hover .search-menu,
-.search-dropdown.open .search-menu {
-    display: block;
-}
 
 /* Search Input */
 .search-input-wrapper {
@@ -445,6 +452,25 @@ body {
     color: #c00;
 }
 
+.dropdown-columns {
+    display: flex;
+    align-items: flex-start;
+    /* gap: 25px; */
+    /* max-width: 1200px; */
+    /* margin: 0 auto 30px; */
+    /* padding: 0 0px; */
+}
+
+.dropdown-column {
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-column li a {
+    /* display: block; */
+    /* padding: 10px 0; */
+}
+
 /* Mobile Support (≤992px) */
 @media (max-width: 992px) {
     .search-menu {
@@ -491,10 +517,11 @@ body {
     background: #b3001b;
     height: 100vh;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     position: relative;
     color: #fff;
+    padding-top: 20vh;
 }
 
 .carousel {
@@ -530,11 +557,12 @@ body {
 }
 
 .btn {
-    padding: 14px 28px;
+    /* padding: 14px 28px; */
+    padding: 14px;
     font-size: 14px;
     text-transform: uppercase;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .btn-light {
@@ -555,9 +583,17 @@ body {
     background: rgba(255, 255, 255, 0.2);
     border: none;
     color: #fff;
-    font-size: 30px;
-    padding: 12px 18px;
+    font-size: 20px;
+    /* slightly smaller so it fits inside */
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* centers the icon */
 }
 
 .arrow.left {
@@ -571,7 +607,8 @@ body {
 /* DOTS */
 .dots {
     position: absolute;
-    /* bottom: 60px; */
+    top: 75vh;
+    /* distance from bottom of hero */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -601,15 +638,17 @@ body {
     gap: 30px;
     margin-top: -120px;
 }
+
 .card {
     background: #fff;
     width: 280px;
     padding: 40px 20px;
     text-align: center;
-    border: 1px solid #ccc; 
+    border: 1px solid #ccc;
 }
+
 .card i {
-    font-size: 40px;
+    font-size: 75px;
     color: #b3001b;
     margin-bottom: 20px;
 }
@@ -617,6 +656,7 @@ body {
 .card h3 {
     font-size: 18px;
     margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .card p {
@@ -643,23 +683,25 @@ body {
 /* Programs */
 /* Updated Programs & Services - White Background */
 .programs-services {
-    background: #fff; /* White background as preferred */
+    background: #fff;
+    /* White background as preferred */
     color: #333;
-    padding: 100px 0;
+    padding: 200px 0;
     text-align: center;
 }
 
 .programs-services h2 {
-    font-size: 2.8rem;
+    font-size: 40px;
     margin-bottom: 10px;
-    color: #333; /* Dark text on white */
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #333;
+    /* Dark text on white */
+    /* text-transform: uppercase; */
+    /* letter-spacing: 1px; */
 }
 
 .programs-services .subtitle {
-    font-size: 1.2rem;
-    color: #666;
+    font-size: 16px;
+    color: #717171;
     margin-bottom: 60px;
     max-width: 800px;
     margin-left: auto;
@@ -668,46 +710,42 @@ body {
 
 /* Carousel Container */
 .programs-carousel {
-  position: relative;
-  max-width: 1500px;
-  margin: 0 auto;
+    position: relative;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .programs-viewport {
-  overflow: hidden;  
+    overflow: hidden;
+    /* max-width: 1100px; */
+    padding: 0 80px;
 }
 
 .programs-track {
-  display: flex;
-  gap: 30px;
-  transition: transform 0.6s ease;
-  will-change: transform;
+    display: flex;
+    gap: 30px;
+    transition: transform 0.6s ease;
+    will-change: transform;
 }
-
- 
 
 /* Program Card */
 .program-card {
-  background: #fff;
-  color: #333;
-
-  flex: 0 0 340px;   /* ← increased from ~280px */
-  min-height: 520px; /* keeps all cards same height */
-
-  padding: 40px 25px;
-  text-align: center;
-
-  border: 1px solid #eee;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-
-  display: flex;
-  flex-direction: column; /* IMPORTANT */
+    background: #fff;
+    color: #333;
+    flex: 0 0 320px;
+    min-height: 370px;
+    padding: 40px 16px 16px;
+    text-align: center;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    /* IMPORTANT */
 }
 
- 
-
-.program-icon {
-    margin-bottom: 30px;
+.program-card:hover {
+    background: #b3001b;
+    color: #fff;
 }
 
 .red-circle {
@@ -718,42 +756,71 @@ body {
     margin: 0 auto;
 }
 
+/* change circle color on hover */
+.program-card:hover .red-circle {
+    background: #fff;
+}
+
+.program-icon {
+    margin-bottom: 30px;
+}
+
+
+
 .program-card h3 {
-    font-size: 1.3rem;
+    font-size: 18px;
     text-transform: uppercase;
     margin-bottom: 20px;
     font-weight: bold;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
 }
 
 .program-card p {
-  flex-grow: 1;   /* pushes button downward */
+    flex-grow: 1;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 200;
 }
 
- 
+
 .learn-more-btn {
-    display: inline-block;
+    display: block;
     background: #000;
     color: #fff;
+    width: 100%;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 0.9rem;
     padding: 12px 30px;
-    transition: background 0.3s; margin-top: auto;  /* sticks button to bottom */
-  align-self: center;
+    /* transition: background 0.3s; */
+    margin-top: auto;
+    /* sticks button to bottom */
+    align-self: center;
 }
 
-.learn-more-btn:hover {
-    background: #c00;
+/* when card is hovered */
+.program-card:hover .learn-more-btn {
+    background: #fff;
+    color: #b3001b;
+    /* red text */
 }
 
 /* Navigation - Bottom Right */
+.programs-services .container {
+    position: relative;
+}
+
+/* Nav bar matches container width & aligns right */
 .programs-nav {
     position: absolute;
-    bottom: -60px; /* Below the carousel */
+    bottom: -80px;
+    left: 0;
     right: 0;
+    /* makes it same width as container */
     display: flex;
+    justify-content: flex-end;
+    /* push arrows to the right */
     gap: 10px;
 }
 
@@ -761,18 +828,18 @@ body {
     background: #eee;
     color: #333;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 33px;
+    height: 33px;
     border-radius: 50%;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .programs-arrow:hover {
-    background: #c00;
-    color: #fff;
+    background: #fff;
+    color: #c00;
 }
 
 .programs-arrow.left {
@@ -782,18 +849,22 @@ body {
 .programs-arrow.right {
     right: -25px;
 }
+
 .programs-track::-webkit-scrollbar {
     display: none;
 }
+
 .programs-track {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
 /* Responsive */
 @media (max-width: 1024px) {
     .programs-track {
         gap: 20px;
     }
+
     .program-card {
         flex: 0 0 260px;
     }
@@ -805,16 +876,21 @@ body {
         right: 50%;
         transform: translateX(50%);
     }
-    
+
     .program-card {
         flex: 0 0 85%;
         margin: 0 auto;
     }
-    
+
     .programs-services h2 {
         font-size: 2rem;
     }
 }
+
+hr {
+    color: gray;
+}
+
 .icon {
     background: #c00;
     color: #fff;
@@ -828,7 +904,6 @@ body {
 }
 
 /* Events */
-/* Upcoming Events Section - Black Background */
 .upcoming-events {
     background: #fff;
     color: #000;
@@ -837,15 +912,15 @@ body {
 }
 
 .upcoming-events h2 {
-    font-size: 2.8rem;
-    color: #999;
+    font-size: 40px;
+    /* color: #999; */
     margin-bottom: 10px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .upcoming-events .subtitle {
-    font-size: 1.2rem;
-    color: #aaa;
+    font-size: 16px;
+    color: #717171;
     margin-bottom: 40px;
 }
 
@@ -878,14 +953,14 @@ body {
     align-items: flex-start;
 }
 
-/* Calendar */ 
+/* Calendar */
 .event-calendar {
     background: #fff;
     color: #333;
     padding: 20px;
     width: 350px;
     flex-shrink: 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .calendar-header {
@@ -896,7 +971,7 @@ body {
 }
 
 .calendar-header h3 {
-    font-size: 1.4rem;
+    /* font-size: 1.4rem; */
     text-transform: uppercase;
 }
 
@@ -913,7 +988,9 @@ body {
     width: 100%;
     border-collapse: collapse;
 }
+
 .calendar-table td {
+    position: relative;
     text-align: center;
     padding: 14px 0;
     font-size: 1rem;
@@ -922,27 +999,58 @@ body {
 
 .calendar-table td:hover {
     background: #f0f0f0;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 .calendar-table .today {
     background: #000 !important;
     color: #fff;
     font-weight: bold;
-    border-radius: 50%;
+    /* border-radius: 8px; */
 }
 
 .calendar-table .has-event {
-    color: #c00;
+    color: #fff;
     font-weight: bold;
+    background: #c00;
 }
 
 .calendar-table .has-event:hover {
     background: #c00;
     color: #fff;
-    border-radius: 50%;
+    /* border-radius: 8px; */
 }
- 
+
+.event-tooltip {
+    margin-top: 14px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .12);
+    padding: 14px 16px;
+    width: 100%;
+    font-size: 0.85rem;
+    display: none;
+    justify-items: start;
+}
+
+.event-tooltip .calendar-event-date {
+    color: #666;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.event-tooltip .calendar-event-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.event-tooltip .calendar-event-location {
+    color: #666;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
 
 /* Event List */
 /* Updated Layout & Event List Wrapper */
@@ -959,7 +1067,7 @@ body {
     padding: 20px;
     width: 350px;
     flex-shrink: 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* New: White Scrollable Event List Container */
@@ -968,16 +1076,18 @@ body {
     background: #fff;
     color: #333;
     padding: 30px;
-    max-height: 600px; /* Adjust height as needed */
+    max-height: 600px;
+    /* Adjust height as needed */
     overflow-y: auto;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
 }
 
 .event-list {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Increased gap for better spacing in scrollable area */
+    gap: 30px;
+    /* Increased gap for better spacing in scrollable area */
 }
 
 /* Event Item - Updated for White Background */
@@ -986,7 +1096,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 30px;
-    border-bottom: 1px solid #eee; /* Lighter separator on white */
+    border-bottom: 1px solid #eee;
+    /* Lighter separator on white */
 }
 
 .event-item:last-child {
@@ -1006,7 +1117,8 @@ body {
     height: 60px;
     background: #c00;
     flex-shrink: 0;
-    border-radius: 4px; /* Slight round for modern look */
+    border-radius: 4px;
+    /* Slight round for modern look */
 }
 
 .day {
@@ -1106,10 +1218,11 @@ body {
         font-size: 0.9rem;
     }
 }
+
 /* Updates */
 /* Latest Updates Section - Black Background */
 .latest-updates {
-   background: #fff;
+    background: #fff;
     color: #333;
     padding: 80px 0;
 }
@@ -1174,7 +1287,7 @@ body {
     background: #fff;
     color: #333;
     flex: 0 0 380px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
 
@@ -1290,6 +1403,7 @@ body {
     .updates-track {
         gap: 20px;
     }
+
     .update-card {
         flex: 0 0 340px;
     }
@@ -1299,11 +1413,13 @@ body {
     .section-header {
         text-align: left;
     }
+
     .view-more-link {
         position: static;
         display: block;
         margin-top: 15px;
     }
+
     .updates-nav {
         bottom: -50px;
         right: 50%;
@@ -1381,7 +1497,7 @@ body {
     background: #fff;
     color: #333;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .director-image {
@@ -1452,6 +1568,7 @@ body {
     .directors-track {
         gap: 15px;
     }
+
     .director-card {
         flex: 0 0 200px;
     }
@@ -1462,6 +1579,7 @@ body {
         flex-direction: column;
         gap: 15px;
     }
+
     .directors-nav {
         bottom: -50px;
         right: 50%;
@@ -1469,7 +1587,7 @@ body {
     }
 }
 
-/* Newsletter */ 
+/* Newsletter */
 .newsletter {
     background: #fff;
     color: #000;
@@ -1502,19 +1620,24 @@ body {
 .newsletter-form {
     display: flex;
     justify-content: center;
-    align-items: stretch; /* Ensures both parts have same height */
-    gap: 0; /* No gap - they should touch */
+    align-items: stretch;
+    /* Ensures both parts have same height */
+    gap: 0;
+    /* No gap - they should touch */
     max-width: 800px;
     margin: 0 auto;
-    height: 80px; /* Increased height for better proportions */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3); /* Optional: subtle shadow for depth */
+    height: 80px;
+    /* Increased height for better proportions */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* Optional: subtle shadow for depth */
 }
 
 .input-wrapper {
     position: relative;
     flex: 1;
     max-width: 550px;
-    background: #c00; /* Solid red background */
+    background: #c00;
+    /* Solid red background */
     height: 100%;
 }
 
@@ -1525,14 +1648,16 @@ body {
     transform: translateY(-50%);
     color: #fff;
     font-size: 1.6rem;
-    pointer-events: none; /* Prevent icon from blocking input */
+    pointer-events: none;
+    /* Prevent icon from blocking input */
     z-index: 2;
 }
 
 .input-wrapper input {
     width: 100%;
     height: 100%;
-    padding: 0 30px 0 80px; /* More left padding to clear the icon */
+    padding: 0 30px 0 80px;
+    /* More left padding to clear the icon */
     background: transparent;
     border: none;
     color: #fff;
@@ -1551,7 +1676,7 @@ body {
 
 .input-wrapper input:focus {
     /* Optional: subtle focus effect */
-    box-shadow: inset 0 0 0 3px rgba(255,255,255,0.3);
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.3);
 }
 
 /* Subscribe Button */
@@ -1602,6 +1727,7 @@ body {
         padding: 0 30px;
     }
 }
+
 /* Footer */
 /* Footer Styles */
 .footer {
@@ -1671,7 +1797,10 @@ body {
 }
 
 /* Contact specific */
-.address, .phone, .email a, .hours {
+.address,
+.phone,
+.email a,
+.hours {
     display: block;
     margin-bottom: 12px;
     color: #aaa;
@@ -1682,7 +1811,8 @@ body {
     text-decoration: none;
 }
 
-.email a:hover, .phone:hover {
+.email a:hover,
+.phone:hover {
     color: #c00;
 }
 
