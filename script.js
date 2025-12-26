@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // mobile dropdown toggles
-  document.querySelectorAll(".dropdown > a").forEach((link) => {
-    link.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        link.parentElement.classList.toggle("open");
-      }
-    });
-  });
+  // document.querySelectorAll(".dropdown > a").forEach((link) => {
+  //   link.addEventListener("click", (e) => {
+  //     if (window.innerWidth <= 768) {
+  //       e.preventDefault();
+  //       link.parentElement.classList.toggle("open");
+  //     }
+  //   });
+  // });
 
   // search (works on both mobile + desktop)
   document.querySelectorAll(".search-trigger > a").forEach((trigger) => {
@@ -70,16 +70,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  document.querySelectorAll(".dropdown").forEach((dropdown) => {
-    dropdown.addEventListener("click", (e) => {
-      // If the user clicked a link inside, allow navigation
-      if (e.target.tagName === "A" && e.target.getAttribute("href") !== "#") {
-        return;
-      }
-      if (window.innerWidth > 768) {
-        e.preventDefault();
-        dropdown.classList.toggle("open");
-      }
+  // document.querySelectorAll(".dropdown > a").forEach((trigger) => {
+  //   trigger.addEventListener("click", (e) => {
+  //     e.preventDefault();
+
+  //     const dropdown = trigger.parentElement;
+
+  //     // Toggle "open" class
+  //     dropdown.classList.toggle("open");
+  //   });
+  // });
+
+  document.querySelectorAll(".dropdown > a").forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      const dropdown = trigger.parentElement;
+
+      document
+        .querySelectorAll(".dropdown.open")
+        .forEach((d) => d !== dropdown && d.classList.remove("open"));
+
+      dropdown.classList.toggle("open");
     });
   });
 
