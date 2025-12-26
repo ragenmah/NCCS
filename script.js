@@ -1,15 +1,16 @@
 // script.js
 
-// Example JS for interactivity, e.g., dynamic calendar or form submission
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.querySelector(".nav-menu");
 
+  // hamburger toggle
   toggle.addEventListener("click", () => {
     menu.classList.toggle("open");
     toggle.classList.toggle("active");
   });
 
+  // mobile dropdowns
   document.querySelectorAll(".dropdown > a").forEach((link) => {
     link.addEventListener("click", (e) => {
       if (window.innerWidth <= 768) {
@@ -19,6 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // search trigger (mobile + desktop)
+  const searchTrigger = document.querySelector(".search-trigger > a");
+  const searchDropdown = document.querySelector(".search-trigger");
+
+  searchTrigger.addEventListener("click", (e) => {
+    e.preventDefault();
+    searchDropdown.classList.toggle("open");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   // Newsletter form submission (placeholder)
   const form = document.querySelector(".newsletter form");
   if (form) {
@@ -63,9 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target.tagName === "A" && e.target.getAttribute("href") !== "#") {
         return;
       }
-
-      e.preventDefault();
-      dropdown.classList.toggle("open");
+      if (window.innerWidth > 768) {
+        e.preventDefault();
+        dropdown.classList.toggle("open");
+      }
     });
   });
 
@@ -91,30 +104,38 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".slide");
   const dots = document.querySelectorAll(".dot");
-  let index = 0;
+  const prevBtn = document.querySelector(".arrow.left");
+  const nextBtn = document.querySelector(".arrow.right");
 
-  function showSlide(i) {
-    slides.forEach((s) => s.classList.remove("active"));
-    dots.forEach((d) => d.classList.remove("active"));
-    slides[i].classList.add("active");
-    dots[i].classList.add("active");
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
   }
 
-  document.querySelector(".arrow.left").onclick = () => {
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-  };
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
 
-  document.querySelector(".arrow.right").onclick = () => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-  };
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  nextBtn?.addEventListener("click", nextSlide);
+  prevBtn?.addEventListener("click", prevSlide);
 
   dots.forEach((dot, i) => {
-    dot.onclick = () => {
-      index = i;
-      showSlide(index);
-    };
+    dot.addEventListener("click", () => {
+      currentSlide = i;
+      showSlide(i);
+    });
   });
 
   /* Auto slide */
@@ -328,43 +349,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const updatesTrack = document.querySelector(".updates-track");
-  const updateCards = document.querySelectorAll(".update-card");
   const updatesPrev = document.querySelector(".updates-arrow.left");
   const updatesNext = document.querySelector(".updates-arrow.right");
 
   let updateIndex = 0;
-  const cardsVisible = 3; // Show 3 cards on desktop
-  const cardWidthWithGap = updateCards[0]
-    ? updateCards[0].offsetWidth + 30
-    : 410;
-  const maxUpdateIndex = Math.max(0, updateCards.length - cardsVisible);
+
+  function getCarouselInfo() {
+    const updateCards = document.querySelectorAll(".update-card");
+    let cardGap = parseInt(getComputedStyle(updatesTrack).gap) || 30;
+    let cardWidth = updateCards[0] ? updateCards[0].offsetWidth : 380;
+    let cardsVisible;
+
+    // Determine number of visible cards based on viewport width
+    if (window.innerWidth > 992) {
+      cardsVisible = 3;
+    } else if (window.innerWidth > 768) {
+      cardsVisible = 2;
+    } else {
+      cardsVisible = 1;
+    }
+
+    const maxIndex = Math.max(0, updateCards.length - cardsVisible);
+    return { cardWidth, cardGap, cardsVisible, maxIndex };
+  }
 
   function updateUpdatesCarousel() {
-    const offset = -updateIndex * cardWidthWithGap;
+    const { cardWidth, cardGap } = getCarouselInfo();
+    const offset = -(updateIndex * (cardWidth + cardGap));
     updatesTrack.style.transform = `translateX(${offset}px)`;
   }
 
   updatesNext.addEventListener("click", () => {
-    if (updateIndex < maxUpdateIndex) {
+    const { maxIndex } = getCarouselInfo();
+    if (updateIndex < maxIndex) {
       updateIndex++;
     } else {
-      updateIndex = 0;
+      updateIndex = 0; // Loop back to start
     }
     updateUpdatesCarousel();
   });
 
   updatesPrev.addEventListener("click", () => {
+    const { maxIndex } = getCarouselInfo();
     if (updateIndex > 0) {
       updateIndex--;
     } else {
-      updateIndex = maxUpdateIndex;
+      updateIndex = maxIndex; // Loop to end
     }
     updateUpdatesCarousel();
   });
 
-  // Initial + resize
+  // Initial load + resize
   updateUpdatesCarousel();
-  window.addEventListener("resize", updateUpdatesCarousel);
+  window.addEventListener("resize", () => {
+    // Recalculate index if needed
+    const { maxIndex } = getCarouselInfo();
+    if (updateIndex > maxIndex) updateIndex = maxIndex;
+    updateUpdatesCarousel();
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {

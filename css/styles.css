@@ -640,7 +640,7 @@ body {
 /* DOTS */
 .dots {
     position: absolute;
-    top: 55vh;
+    top: 75vh;
     /* distance from bottom of hero */
     left: 50%;
     transform: translateX(-50%);
@@ -714,7 +714,6 @@ body {
 }
 
 /* Programs */
-/* Updated Programs & Services - White Background */
 .programs-services {
     background: #fff;
     /* White background as preferred */
@@ -752,6 +751,15 @@ body {
     overflow: hidden;
     /* max-width: 1100px; */
     padding: 0 80px;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.programs-viewport {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .programs-track {
@@ -893,35 +901,12 @@ body {
 .programs-track {
     -ms-overflow-style: none;
     scrollbar-width: none;
+    scroll-behavior: smooth;
+
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    .programs-track {
-        gap: 20px;
-    }
 
-    .program-card {
-        flex: 0 0 260px;
-    }
-}
 
-@media (max-width: 768px) {
-    .programs-nav {
-        bottom: -50px;
-        right: 50%;
-        transform: translateX(50%);
-    }
-
-    .program-card {
-        flex: 0 0 85%;
-        margin: 0 auto;
-    }
-
-    .programs-services h2 {
-        font-size: 2rem;
-    }
-}
 
 hr {
     color: #717171;
@@ -1006,7 +991,7 @@ hr {
     padding: 20px;
     width: 350px;
     flex-shrink: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
 }
 
 .calendar-header {
@@ -1021,12 +1006,17 @@ hr {
     text-transform: uppercase;
 }
 
+
+
 .calendar-nav button {
-    background: none;
     border: none;
     color: #333;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
     font-size: 18px;
     cursor: pointer;
+    /* width: 48px;
+    height: 48px; */
     padding: 5px;
 }
 
@@ -1111,9 +1101,10 @@ hr {
     background: #fff;
     color: #333;
     padding: 20px;
-    width: 350px;
+    width: 360px;
     flex-shrink: 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #E8E8ED;
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
 }
 
 /* New: White Scrollable Event List Container */
@@ -1232,46 +1223,6 @@ hr {
     background: #a00;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .events-layout {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .event-calendar {
-        width: 100%;
-        max-width: 400px;
-        margin-bottom: 40px;
-    }
-
-    .event-list-wrapper {
-        width: 100%;
-        max-width: 600px;
-        max-height: 500px;
-    }
-
-    .event-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .view-event-btn {
-        align-self: flex-end;
-    }
-}
-
-@media (max-width: 768px) {
-    .upcoming-events h2 {
-        font-size: 2rem;
-    }
-
-    .event-filters .filter {
-        margin: 0 10px;
-        font-size: 0.9rem;
-    }
-}
 
 /* Updates */
 .latest-updates {
@@ -1459,35 +1410,6 @@ hr {
     background: #c00;
 } */
 
-/* Responsive */
-@media (max-width: 1024px) {
-    .updates-track {
-        gap: 20px;
-    }
-
-    .update-card {
-        flex: 0 0 340px;
-    }
-}
-
-@media (max-width: 768px) {
-    .section-header {
-        text-align: left;
-    }
-
-    .view-more-link {
-        position: static;
-        display: block;
-        margin-top: 15px;
-    }
-
-    .updates-nav {
-        bottom: -50px;
-        right: 50%;
-        transform: translateX(50%);
-    }
-}
-
 /* Directors */
 /* Board of Directors Section - Black Background */
 .board-directors {
@@ -1541,7 +1463,7 @@ hr {
     color: #000;
 } */
 
-/* Carousel */
+/* directors */
 .directors-carousel {
     position: relative;
     padding-left: 100px;
@@ -1652,29 +1574,6 @@ hr {
     background: #c00;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    .directors-track {
-        gap: 15px;
-    }
-
-    .director-card {
-        flex: 0 0 200px;
-    }
-}
-
-@media (max-width: 768px) {
-    .header-subtitle {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .directors-nav {
-        bottom: -50px;
-        right: 50%;
-        transform: translateX(50%);
-    }
-}
 
 /* Newsletter */
 .newsletter {
@@ -1789,35 +1688,6 @@ hr {
 .newsletter-form button:hover {
     background: #f0f0f0;
     color: #a00;
-}
-
-/* Responsive Fix */
-@media (max-width: 768px) {
-    .newsletter-form {
-        flex-direction: column;
-        height: auto;
-        gap: 20px;
-    }
-
-    .input-wrapper,
-    .newsletter-form button {
-        max-width: 100%;
-        height: 70px;
-    }
-
-    .input-wrapper input {
-        font-size: 1.1rem;
-        padding-left: 75px;
-    }
-
-    .input-wrapper i {
-        left: 25px;
-        font-size: 1.5rem;
-    }
-
-    .newsletter-form button {
-        padding: 0 30px;
-    }
 }
 
 /* Footer */

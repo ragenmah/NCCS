@@ -44,10 +44,35 @@
                 <img src="./images/logo.png" alt="NCCS Logo" />
             </div>
             <nav class="nav">
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <i class="fas fa-bars open-icon"></i>
-                    <i class="fas fa-times close-icon"></i>
-                </button>
+                <div class="nav-actions">
+                    <button class="nav-toggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars open-icon"></i>
+                        <i class="fas fa-times close-icon"></i>
+                    </button>
+
+                    <!-- search icon stays visible on mobile -->
+                    <div class="search-trigger dropdown">
+                        <a href="#"><i class="fas fa-search"></i></a>
+
+                        <div class="dropdown-menu search-menu">
+                            <div class="search-input-wrapper">
+                                <i class="fas fa-search search-icon-inside"></i>
+                                <input type="text" placeholder="Search nccs.com" autofocus />
+                            </div>
+
+                            <div class="search-suggestions">
+                                <div class="suggestions-header">QUICK LINKS</div>
+                                <ul>
+                                    <li><a href="#"><i class="fas fa-arrow-right"></i> ABOUT US</a></li>
+                                    <li><a href="#"><i class="fas fa-arrow-right"></i> PROGRAM SERVICES</a></li>
+                                    <li><a href="#"><i class="fas fa-arrow-right"></i> EVENTS</a></li>
+                                    <li><a href="#"><i class="fas fa-arrow-right"></i> MEMBERSHIP</a></li>
+                                    <li><a href="#"><i class="fas fa-arrow-right"></i> VOLUNTEER</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
                 <ul class="nav-menu">
@@ -144,34 +169,59 @@
     <!-- HERO CAROUSEL -->
     <section class="hero">
         <div class="carousel">
-            <!-- Slide -->
+            <!-- Slide 1 -->
             <div class="slide active">
                 <div class="hero-content">
-                    <h1>Connecting Communities<br />Preserving Culture.</h1>
+                    <h1>Connecting Communities<br>Preserving Culture.</h1>
                     <p class="hero-paragraph">
-
                         Empowering communities, preserving culture, creating opportunity.
                     </p>
-
                     <div class="hero-buttons">
                         <a href="#" class="btn btn-light">Learn More</a>
                         <a href="#" class="btn btn-outline">Become a Member</a>
                     </div>
                 </div>
-
-                <!-- Arrows -->
-                <button class="arrow left">&#10094;</button>
-                <button class="arrow right">&#10095;</button>
-
-                <!-- Dots -->
-
             </div>
-            <div class="dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="hero-content">
+                    <h1>Building Stronger Bonds</h1>
+                    <p class="hero-paragraph">
+                        Join us in celebrating diversity, fostering unity, and creating lasting impact in the Nepalese
+                        Canadian community.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-light">Get Involved</a>
+                        <a href="#" class="btn btn-outline">Donate Today</a>
+                    </div>
+                </div>
             </div>
+            <!-- Slide 3 -->
+
+            <div class="slide">
+                <div class="hero-content">
+                    <h1>Empowering the Next Generation</h1>
+                    <p class="hero-paragraph">
+                        Through education, leadership programs, and cultural preservation, we inspire youth to lead with
+                        pride.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-light">Youth Programs</a>
+                        <a href="#" class="btn btn-outline">Volunteer</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="arrow left" aria-label="Previous">&#10094;</button>
+            <button class="arrow right" aria-label="Next">&#10095;</button>
+        </div>
+
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </section>
 
     <!-- CTA CARDS -->

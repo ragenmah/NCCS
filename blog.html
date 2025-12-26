@@ -7,6 +7,7 @@
     <title>Nepalese Canadian Community Services</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/members.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -44,7 +45,11 @@
                 <img src="./images/logo.png" alt="NCCS Logo" />
             </div>
             <nav class="nav">
-                <ul>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars open-icon"></i>
+                    <i class="fas fa-times close-icon"></i>
+                </button>
+                <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li class="dropdown ">
@@ -433,81 +438,35 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script>
-        // JavaScript for Tab Switching & Year Select Visibility
-        document.querySelectorAll('.director-tabs .tab').forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.querySelectorAll('.director-tabs .tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
-                // Show year select only for PAST DIRECTORS
-                const yearSelect = document.querySelector('.year-select');
-                if (tab.textContent.trim() === 'PAST DIRECTORS') {
-                    yearSelect.classList.add('visible');
-                } else {
-                    yearSelect.classList.remove('visible');
-                }
-
-                // Future: Load content based on tab
-            });
-        });
-
-        // Team Tabs Switching
-        document.querySelectorAll('.team-tabs .team-tab').forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.querySelectorAll('.team-tabs .team-tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                // Future: Load content based on team type
-            });
-        });
-
         document.addEventListener("DOMContentLoaded", () => {
-            // Modal Functionality
-            const modal = document.getElementById('director-modal');
-            const modalImg = document.getElementById('modal-img');
-            const modalPosition = document.querySelector('.modal-position');
-            const modalName = document.querySelector('.modal-name');
-            const modalBio = document.querySelector('.modal-bio');
-            const modalContact = document.querySelector('.modal-contact');
-            const closeBtn = document.querySelector('.modal-close');
+            // JavaScript for Tab Switching & Year Select Visibility
+            document.querySelectorAll('.director-tabs .tab').forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.querySelectorAll('.director-tabs .tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
 
-            document.querySelectorAll('.board-director-card').forEach(card => {
-                card.addEventListener('click', () => {
-                    // Example data - in real app, use data attributes or fetch from object
-                    modalImg.src = card.querySelector('.director-image img').src;
-                    modalPosition.textContent = card.querySelector('.position').textContent;
-                    modalName.textContent = card.querySelector('h3').textContent;
+                    // Show year select only for PAST DIRECTORS
+                    const yearSelect = document.querySelector('.year-select');
+                    if (tab.textContent.trim() === 'PAST DIRECTORS') {
+                        yearSelect.classList.add('visible');
+                    } else {
+                        yearSelect.classList.remove('visible');
+                    }
 
-                    // Set bio and contact (you can store these in data attributes)
-                    modalBio.textContent = "Currently serving as the Chairperson of Nepalese Canadian Community Services (NCCS) and General Secretary of the Toronto Nepalese Sports Club (TNSC), he brings strong leadership and community engagement experience to his roles. He previously served as a Board Director for both Srijansil Nepali Samaj and NCCS. A reliable and trustworthy Realtor with over five years of professional experience at Homelife 247 Realty Inc., he has been assisting clients across the Greater Toronto Area (GTA). He holds a Master's Degree in Physics from Nepal, a Diploma in Computer Networking from Seneca College, and Real Estate Education from Humber College. Dedicated to building meaningful relationships, empowering communities, and making a positive impact in the lives of others, he continues to inspire trust and collaboration through his work.";
-
-                    modalContact.innerHTML = `
-            <p><strong>Email:</strong> basnetbm@gmail.com</p>
-            <p><strong>Phone:</strong> +1 (647) 740-6067</p>
-        `;
-
-                    modal.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent background scroll
+                    // Future: Load content based on tab
                 });
             });
-
-            closeBtn.addEventListener('click', () => {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-
-            // Close on background click
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
         });
+
+
+
+
     </script>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
