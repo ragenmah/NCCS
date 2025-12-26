@@ -45,14 +45,43 @@
                 <img src="./images/logo.png" alt="NCCS Logo" />
             </div>
             <nav class="nav">
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <i class="fas fa-bars open-icon"></i>
-                    <i class="fas fa-times close-icon"></i>
-                </button>
+                <div class="nav-actions">
+
+                    <!-- search icon stays visible on mobile -->
+                    <!-- <div class="search-trigger dropdown">
+                        <a href="#"><i class="fas fa-search"></i></a>
+
+                        <div class="dropdown-menu search-menu">
+                            <div class="search-input-wrapper">
+                                <i class="fas fa-search search-icon-inside"></i>
+                                <input type="text" placeholder="Search nccs.com" autofocus />
+                            </div>
+
+                            <div class="search-suggestions">
+                                <div class="suggestions-header">QUICK LINKS</div>
+                                <ul>
+                                    <li><a href="#"><i class="fas fa-arrow-right"></i> ABOUT US</a></li>
+                                    <li><a href="#"><i class="fas fa-arrow-right"></i> PROGRAM SERVICES</a></li>
+                                    <li><a href="#"><i class="fas fa-arrow-right"></i> EVENTS</a></li>
+                                    <li><a href="#"><i class="fas fa-arrow-right"></i> MEMBERSHIP</a></li>
+                                    <li><a href="#"><i class="fas fa-arrow-right"></i> VOLUNTEER</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <button class="nav-toggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars open-icon"></i>
+                        <i class="fas fa-times close-icon"></i>
+                    </button>
+
+                </div>
+
+
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="#">About Us</a></li>
-                    <li class="dropdown ">
+                    <li class="dropdown">
                         <a href="#">Directors <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
                             <div class="dropdown-header">Explore Directors</div>
@@ -67,7 +96,7 @@
                         </div>
                     </li>
                     <li><a href="#">Events</a></li>
-                    <li><a href="#" class="active">Blog</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="#">Membership</a></li>
                     <li><a href="#">Contact us</a></li>
                     <!-- Updated "More" Dropdown HTML -->
@@ -106,9 +135,12 @@
                         </div>
                     </li>
                     <!-- Updated Search Item with Dropdown -->
-                    <li class="search-item dropdown wide-dropdown">
-                        <a href="#"><i class="fas fa-search"></i></a>
-                        <div class="dropdown-menu search-menu">
+                    <li class="search-item dropdown  ">
+                        <a href="#" class="search-toggle">
+                            <span class="search-text">Search</span><i class="fas fa-search"></i>
+
+                        </a>
+                        <div class="dropdown-menu  ">
                             <div class="search-input-wrapper">
                                 <i class="fas fa-search search-icon-inside"></i>
                                 <input type="text" placeholder="Search nccs.com" autofocus />
