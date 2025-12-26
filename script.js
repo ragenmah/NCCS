@@ -4,13 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
   const menu = document.querySelector(".nav-menu");
 
-  // hamburger toggle
   toggle.addEventListener("click", () => {
     menu.classList.toggle("open");
     toggle.classList.toggle("active");
+
+    // prevent body scroll when menu is open (mobile)
+    document.body.classList.toggle("menu-open");
   });
 
-  // mobile dropdowns
+  // mobile dropdown toggles
   document.querySelectorAll(".dropdown > a").forEach((link) => {
     link.addEventListener("click", (e) => {
       if (window.innerWidth <= 768) {
@@ -20,13 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // search trigger (mobile + desktop)
-  const searchTrigger = document.querySelector(".search-trigger > a");
-  const searchDropdown = document.querySelector(".search-trigger");
-
-  searchTrigger.addEventListener("click", (e) => {
-    e.preventDefault();
-    searchDropdown.classList.toggle("open");
+  // search (works on both mobile + desktop)
+  document.querySelectorAll(".search-trigger > a").forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      trigger.parentElement.classList.toggle("open");
+    });
   });
 });
 
