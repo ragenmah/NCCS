@@ -140,9 +140,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Auto slide */
   setInterval(() => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
   }, 5000);
+
+  // let autoplay = setInterval(nextSlide, 5000);
+
+  // document.querySelector(".hero-slider")?.addEventListener("mouseenter", () => {
+  //   clearInterval(autoplay);
+  // });
+
+  // document.querySelector(".hero-slider")?.addEventListener("mouseleave", () => {
+  //   autoplay = setInterval(nextSlide, 5000);
+  // });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -427,23 +437,17 @@ document.addEventListener("DOMContentLoaded", () => {
     directorsTrack.style.transform = `translateX(${offset}px)`;
   }
 
-  directorsNext.addEventListener("click", () => {
-    if (directorIndex < maxDirectorIndex) {
-      directorIndex++;
-    } else {
-      directorIndex = 0;
-    }
-    updateDirectorsCarousel();
-  });
+  if (directorsNext && directorsPrev) {
+    directorsNext.addEventListener("click", () => {
+      directorIndex = directorIndex < maxDirectorIndex ? directorIndex + 1 : 0;
+      updateDirectorsCarousel();
+    });
 
-  directorsPrev.addEventListener("click", () => {
-    if (directorIndex > 0) {
-      directorIndex--;
-    } else {
-      directorIndex = maxDirectorIndex;
-    }
-    updateDirectorsCarousel();
-  });
+    directorsPrev.addEventListener("click", () => {
+      directorIndex = directorIndex > 0 ? directorIndex - 1 : maxDirectorIndex;
+      updateDirectorsCarousel();
+    });
+  }
 
   // Initial + resize
   updateDirectorsCarousel();
