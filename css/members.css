@@ -160,7 +160,7 @@
 /* Director Card */
 .board-director-card {
     background: #fff;
-    /* width: 280px; */
+    width: 280px;
     overflow: hidden;
     /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); */
     transition: transform 0.3s;
@@ -322,35 +322,68 @@
 @media (max-width: 992px) {
     .modal-body {
         flex-direction: column;
-        padding: 40px;
+        gap: 24px;
+        padding: 36px;
     }
 
     .modal-image img {
         width: 100%;
-        max-width: 300px;
+        max-width: 340px;
         margin: 0 auto;
-        display: block;
+    }
+
+    .modal-left {
+        text-align: center;
     }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
     .modal-content {
-        width: 95%;
-        padding: 20px;
+        width: 96%;
+        max-height: 95vh;
+    }
+
+    .modal-body {
+        padding: 24px;
     }
 
     .modal-close {
-        top: 15px;
-        right: 20px;
-        font-size: 30px;
+        top: 12px;
+        right: 16px;
+        font-size: 28px;
     }
 
     .modal-name {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+
+    .modal-position {
+        font-size: 1rem;
     }
 
     .modal-bio {
-        font-size: 1rem;
+        font-size: .95rem;
+        line-height: 1.6;
+    }
+
+    .modal-image img {
+        max-width: 260px;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    .modal-body {
+        padding: 18px;
+    }
+
+    .modal-name {
+        font-size: 1.4rem;
+    }
+
+    .modal-bio {
+        font-size: .9rem;
     }
 }
 
