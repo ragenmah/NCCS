@@ -716,7 +716,7 @@ header {
     background: #fff;
     /* White background as preferred */
     color: #333;
-    padding: 200px 0;
+    padding: 200px 0 100px;
     text-align: center;
 }
 
@@ -922,36 +922,42 @@ hr {
     margin: 0 auto 10px;
 }
 
-
 .mid-banner {
     width: 100%;
-    overflow: hidden;
-    /* prevents image overflow */
+    overflow: hidden; /* Keeps cropped parts hidden */
+    background: #f0f8ff; /* Optional light fallback color matching the banner's background */
 }
 
 .mid-banner img {
     width: 100%;
-    height: auto;
-    /* height: 200px; */
-    /* fixed height */
+    height: 100%;
     display: block;
-    object-fit: cover;
-    /* fills area without distortion */
+    object-fit: cover; /* Fills the area, cropping excess without stretching */
+    object-position: center; /* Focuses on the center (couple + main text); adjust if needed, e.g., 'center top' to prioritize top text */
 }
 
-/* Optional fixed height style */
-/* @media (min-width: 768px) {
-    .mid-banner img {
-        height: 100px;
-    }
-} */
-/* 
-@media (max-width: 767px) {
-    .mid-banner img {
-        height: 180px;
-    }
-} */
+/* Set explicit heights per breakpoint */
+.mid-banner {
+    /* height: 450px;   */
+}
 
+@media (max-width: 1024px) {
+    .mid-banner {
+        height: 400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mid-banner {
+        height: 320px; /* Mobile – taller than 180px to avoid losing key text/buttons, but still compact */
+    }
+}
+
+@media (max-width: 480px) {
+    .mid-banner {
+        height: 280px; /* Extra-small phones */
+    }
+}
 /* Events */
 .upcoming-events {
     background: #fff;
