@@ -516,7 +516,7 @@ header {
     justify-content: center;
     position: relative;
     color: #fff;
-    padding-top: 20vh;
+    /* padding-top: 20vh; */
 }
 
 .carousel {
@@ -525,7 +525,17 @@ header {
     position: relative;
 }
 
+/* .slide {
+    display: none;
+} */
+
+.slide.active {
+    display: block;
+}
+
 .slide {
+    /* position: relative;
+  height: 100vh; */
     display: none;
 }
 
@@ -533,10 +543,35 @@ header {
     display: block;
 }
 
-.hero-content,
-.member-content {
+.slide-bg {
     position: absolute;
-    top: 15%;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.slide-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    position: absolute;
+    top: 30vh;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -546,7 +581,14 @@ header {
 }
 
 .member-content {
-    top: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+
 }
 
 .hero-content h1,
@@ -578,6 +620,7 @@ header {
 /* BUTTONS */
 .hero-buttons {
     display: flex;
+
     gap: 30px;
     justify-content: center;
 }
@@ -589,6 +632,7 @@ header {
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 500;
+    z-index: 9;
 }
 
 .btn-light {
@@ -624,6 +668,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 3;
+
     /* centers the icon */
 }
 
@@ -642,6 +688,7 @@ header {
     /* distance from bottom of hero */
     left: 50%;
     transform: translateX(-50%);
+    z-index: 3;
 }
 
 .dot {
@@ -668,6 +715,8 @@ header {
     justify-content: center;
     gap: 30px;
     margin-top: -120px;
+    z-index: 3;
+
 }
 
 .card {
@@ -716,7 +765,7 @@ header {
     background: #fff;
     /* White background as preferred */
     color: #333;
-    padding: 200px 0;
+    padding: 200px 0px 120px;
     text-align: center;
 }
 
@@ -926,7 +975,7 @@ hr {
 .mid-banner {
     width: 100%;
     overflow: hidden;
-    /* prevents image overflow */
+    padding-bottom: 80px;
 }
 
 .mid-banner img {
@@ -1860,11 +1909,17 @@ hr {
     color: #c00;
 }
 
+.brand,
 .footer-brand {
     display: flex;
     align-items: flex-end;
     /* bottom-align both */
     gap: 6px;
+
+}
+
+.footer-brand {
+
     color: white;
 }
 
@@ -1881,6 +1936,7 @@ hr {
 
 .powered-by {
     font-size: 12px;
+    padding-bottom: 12px;
 }
 
 /* Mobile */
