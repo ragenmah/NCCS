@@ -114,8 +114,9 @@
 }
 
 .year-select select option {
-    background: #000;
+    background: #fff;
     color: #000;
+    align-items: start;
 }
 
 /* Team Tabs (Executive/Board/Advisors) */
