@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="top-bar">
+     <div class="top-bar">
         <div class="container top-bar-container">
             <div class="top-left">
                 <span class="contact-item">
@@ -54,19 +54,13 @@
             </div>
             <nav class="nav">
                 <div class="nav-actions">
-
-
-
                     <button class="nav-toggle" aria-label="Toggle navigation">
                         <i class="fas fa-bars open-icon"></i>
                         <i class="fas fa-times close-icon"></i>
                     </button>
-
                 </div>
-
-
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li class="dropdown">
                         <a href="#">Directors <i class="fas fa-chevron-down"></i></a>
@@ -87,38 +81,42 @@
                     <li><a href="#">Membership</a></li>
                     <li><a href="#">Contact us</a></li>
                     <!-- Updated "More" Dropdown HTML -->
-                    <li class="dropdown more-dropdown">
+                    <li class="dropdown  ">
                         <a href="#">More <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu wide-dropdown">
-                            <div class="dropdown-header">EXPLORE MORE</div>
-                            <div class="dropdown-columns">
-                                <ul class="dropdown-column">
-                                    <li>
-                                        <a href="#"><i class="fas fa-arrow-right"></i> PRESIDENT'S
-                                            MESSAGE</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fas fa-arrow-right"></i> VOLUNTEER</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fas fa-arrow-right"></i> DOCUMENTS</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fas fa-arrow-right"></i> LATEST UPDATES</a>
-                                    </li>
-                                </ul>
-                                <ul class="dropdown-column">
-                                    <li>
-                                        <a href="#"><i class="fas fa-arrow-right"></i> CAREER</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fas fa-arrow-right"></i> FAQS</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fas fa-arrow-right"></i> PHONE NUMBERS</a>
-                                    </li>
-                                </ul>
+                        <div class="dropdown-menu ">
+                            <div class="dropdown-inner">
+
+                                <div class="dropdown-header">EXPLORE MORE</div>
+                                <div class="dropdown-columns">
+                                    <ul class="dropdown-column">
+                                        <li>
+                                            <a href="#"><i class="fas fa-arrow-right"></i> PRESIDENT'S
+                                                MESSAGE</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fas fa-arrow-right"></i> VOLUNTEER</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fas fa-arrow-right"></i> DOCUMENTS</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fas fa-arrow-right"></i> LATEST UPDATES</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="dropdown-column ">
+                                        <li>
+                                            <a href="#"><i class="fas fa-arrow-right"></i> CAREER</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fas fa-arrow-right"></i> FAQS</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fas fa-arrow-right"></i> PHONE NUMBERS</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+
                         </div>
                     </li>
                     <!-- Updated Search Item with Dropdown -->
@@ -229,7 +227,7 @@
                             workshops. The event highlighted Nepal’s rich arts, heritage, and traditions while fostering
                             community connection and cultural pride among attendees of all ages.</p>
                         <div class="update-footer">
-                            <a href="#" class="show-more-btn">SHOW MORE</a>
+                            <a href="./blog-detail.html" class="show-more-btn">SHOW MORE</a>
                             <div class="update-social-icons">
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -386,9 +384,16 @@
         <div class="container footer-container">
             <!-- Logo + Description -->
             <div class="footer-logo-desc">
-                <div class="footer-logo">
-                    <img src="images/logo.png" alt="NCCS Logo"> <!-- Replace with your actual logo path -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="NCCS Logo">
+                    </div>
+
+                    <div class="powered-by">
+                        Powered by <strong>LemFi</strong>
+                    </div>
                 </div>
+
                 <p class="footer-description">
                     Nepalese Canadian Community Services is dedicated to preserving culture, providing services, and
                     building a stronger community.
@@ -454,7 +459,7 @@
             </div>
         </div>
     </footer>
-
+    
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // JavaScript for Tab Switching & Year Select Visibility
