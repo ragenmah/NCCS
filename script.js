@@ -83,26 +83,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".toggle-sub").forEach((item) => {
     item.addEventListener("click", (e) => {
+      //this code closes other sub dropdown when one is open
+      // e.preventDefault();
+      // e.stopPropagation();
+
+      // const parent = item.closest(".menu-item");
+      // document
+      //   .querySelectorAll(".toggle-sub")
+      //   .forEach((a) => a.classList.remove("selected"));
+
+      // document.querySelectorAll(".menu-item.active").forEach((li) => {
+      //   if (li !== parent) li.classList.remove("active");
+      // });
+
+      // // Toggle this one
+      // parent.classList.toggle("active");
+
+      // // Apply gray text to clicked link
+      // item.classList.add("selected");
+
       e.preventDefault();
       e.stopPropagation();
 
       const parent = item.closest(".menu-item");
 
-      // Remove selected style from all links
-      document
-        .querySelectorAll(".toggle-sub")
-        .forEach((a) => a.classList.remove("selected"));
-
-      // Close other menu items
-      document.querySelectorAll(".menu-item.active").forEach((li) => {
-        if (li !== parent) li.classList.remove("active");
-      });
-
-      // Toggle this one
+      // Toggle only this submenu
       parent.classList.toggle("active");
 
-      // Apply gray text to clicked link
-      item.classList.add("selected");
+      // Toggle gray state on this link only
+      item.classList.toggle("selected");
     });
   });
 
