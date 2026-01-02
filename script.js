@@ -81,6 +81,31 @@ document.addEventListener("DOMContentLoaded", () => {
   //   });
   // });
 
+  document.querySelectorAll(".toggle-sub").forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const parent = item.closest(".menu-item");
+
+      // Remove selected style from all links
+      document
+        .querySelectorAll(".toggle-sub")
+        .forEach((a) => a.classList.remove("selected"));
+
+      // Close other menu items
+      document.querySelectorAll(".menu-item.active").forEach((li) => {
+        if (li !== parent) li.classList.remove("active");
+      });
+
+      // Toggle this one
+      parent.classList.toggle("active");
+
+      // Apply gray text to clicked link
+      item.classList.add("selected");
+    });
+  });
+
   document.querySelectorAll(".dropdown > a").forEach((trigger) => {
     trigger.addEventListener("click", (e) => {
       e.preventDefault();
