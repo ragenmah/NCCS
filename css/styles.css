@@ -252,7 +252,7 @@ header {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%; 
+  top: 100%;
   /* very imp  */
   left: 0;
   right: 0;
@@ -283,7 +283,6 @@ header {
   /* site width */
   margin: 0 auto;
 }
-
 
 /* =========================
    DROPDOWN HEADER
@@ -473,10 +472,8 @@ header {
 
 .dropdown-columns ul {
   /* max-width: 700px; */
-  margin: 0px  ;
+  margin: 0px;
 }
-
-
 
 .dropdown-column li a {
   /* display: block; */
@@ -784,14 +781,14 @@ header {
 /* Carousel Container */
 .programs-carousel {
   position: relative;
-  max-width: 1500px;
+  max-width: 2000px;
   margin: 0 auto;
 }
 
 .programs-viewport {
   overflow: hidden;
   /* max-width: 1100px; */
-  padding: 0 80px;
+  padding: 0 100px;
 
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -836,6 +833,18 @@ header {
   background: #c00;
   border-radius: 50%;
   margin: 0 auto;
+  overflow: hidden; /* clip image to circle */
+  display: flex; /* center image if needed */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make the image fill the circle */
+.red-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop to circle */
+  display: block;
 }
 
 /* change circle color on hover */
@@ -917,9 +926,12 @@ header {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.programs-arrow :hover {
-  background: #fff;
+.programs-arrow :hover, .updates-arrow :hover{
+  /* background: #fff; */
   color: #c00;
+  /* width: 25px;
+  height: 25px;
+  border-radius: 50%; */
 }
 
 .programs-arrow.left {
@@ -1215,17 +1227,17 @@ hr {
   /* gap: 10px; */
 }
 
-.event-image{
+.event-image {
   width: 72px;
   height: 72px;
   border-radius: 1px;
-  overflow: hidden;   
+  overflow: hidden;
   flex-shrink: 0;
-  background: #c00;    
+  background: #c00;
 }
 
 /* make the image fill the box */
-.event-image img{
+.event-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
