@@ -478,13 +478,13 @@ header {
 .dropdown-inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    /* padding: 0 20px; */
 }
 
 .dropdown-columns {
     display: flex;
     /* align-items: flex-start; */
-    gap: 160px;
+    gap: 165px;
     /* max-width: 900px; */
 
     /* margin: 0 auto 30px; */

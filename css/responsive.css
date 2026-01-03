@@ -187,7 +187,8 @@
         padding: 0px;
     }
 
-    .wide-dropdown .dropdown-columns {
+
+    .dropdown-inner .dropdown-columns {
         flex-direction: column;
         gap: 0px;
     }
