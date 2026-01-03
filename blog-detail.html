@@ -39,7 +39,7 @@
 
     .single-blog h1 {
       font-size: 2.2em;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       /*  color: #c00;*/
     }
 
@@ -65,11 +65,11 @@
     }
 
     .single-blog .social-share a:hover {
-      color: #c00;
+      color: #b10020;
     }
 
     .blog-single-hero {
-      background: #c00;
+      background: #b10020;
       color: white;
       padding: 60px 0 40px;
       position: relative;
@@ -142,14 +142,15 @@
 
     .back-btn {
       position: absolute;
-      left: 20px;
-      top: 50%;
+      left: 10px;
+      top: 20%;
       transform: translateY(-50%);
-      color: white;
-      font-size: 1.8rem;
-      width: 50px;
-      height: 50px;
-      background: rgba(255, 255, 255, 0.2);
+      color: #b10020;
+      font-size: 1.0rem;
+      width: 32px;
+      height: 32px;
+      /* background: rgba(255, 255, 255, 0.2); */
+      background: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -164,21 +165,143 @@
     }
 
     .blog-hero-text {
-      max-width: 800px;
+      /* max-width: 800px; */
     }
 
     .blog-hero-text h1 {
-      font-size: 2.8rem;
+      font-size: 56px;
+
+      /* font-size: 2.8rem; */
       margin-bottom: 16px;
       font-weight: 700;
     }
 
     .blog-hero-text .hero-paragraph {
-      font-size: 1.2rem;
+      font-size: 16px;
+
+      /* font-size: 1.2rem; */
       opacity: 0.95;
       line-height: 1.6;
       max-width: 700px;
       margin: 0 auto;
+    }
+
+    .related-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .related-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #333;
+      margin: 0;
+    }
+
+    .view-all-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #b10020;
+      color: white;
+      padding: 10px 20px;
+      /* border-radius: 6px; */
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .view-all-btn:hover {
+      background-color: #a00;
+    }
+
+    .view-all-btn i {
+      font-size: 0.9rem;
+    }
+
+    /* Carousel Styles */
+    .updates-carousel {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .updates-viewport {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      /* Smooth iOS scroll */
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+      /* Smooth scrolling on iOS */
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* IE and Edge */
+    }
+
+    .updates-viewport::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari, and Opera */
+      height: 0;
+      width: 0;
+    }
+
+    .updates-viewport::-webkit-scrollbar-track {
+      background: #eee;
+      border-radius: 4px;
+    }
+
+    .updates-viewport::-webkit-scrollbar-thumb {
+      background: #b10020;
+      border-radius: 4px;
+    }
+
+    .updates-track {
+      display: flex;
+      gap: 24px;
+      padding: 10px 0;
+      min-width: max-content;
+      /* Ensures track doesn't collapse */
+      scroll-behavior: smooth;
+    }
+
+    .update-card {
+      flex: 0 0 320px;
+      max-width: 320px;
+      background: white;
+      /* border-radius: 12px; */
+      overflow: hidden;
+      /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease; */
+      display: flex;
+      flex-direction: column;
+      /* Important: enables footer at bottom */
+      height: auto;
+    }
+
+    /* .update-card:hover {
+      transform: translateY(-8px);
+    } */
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .related-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .related-title {
+        font-size: 1.6rem;
+      }
+
+      .update-card {
+        flex: 0 0 280px;
+      }
     }
 
     /* Responsive adjustments */
@@ -289,20 +412,20 @@
               <div class="dropdown-header">Explore Events</div>
               <ul class="dropdown-list">
                 <li>
-                  <a href="members.html"><i class="fas fa-arrow-right"></i> ACADEMIC</a>
+                  <a href="events.html"><i class="fas fa-arrow-right"></i> ACADEMIC</a>
                 </li>
                 <li>
-                  <a href="members.html"><i class="fas fa-arrow-right"></i> NETWORKING &
+                  <a href="events.html"><i class="fas fa-arrow-right"></i> NETWORKING &
                     PROFESSIONAL</a>
                 </li>
                 <li>
-                  <a href="members.html"><i class="fas fa-arrow-right"></i>COMMUNITY & SOCIAL</a>
+                  <a href="events.html"><i class="fas fa-arrow-right"></i>COMMUNITY & SOCIAL</a>
                 </li>
                 <li>
-                  <a href="members.html"><i class="fas fa-arrow-right"></i> SPORTS & RECREATION</a>
+                  <a href="events.html"><i class="fas fa-arrow-right"></i> SPORTS & RECREATION</a>
                 </li>
                 <li>
-                  <a href="members.html"><i class="fas fa-arrow-right"></i> DIGITAL & HYBRID</a>
+                  <a href="events.html"><i class="fas fa-arrow-right"></i> DIGITAL & HYBRID</a>
                 </li>
               </ul>
             </div>
@@ -425,10 +548,10 @@
 
         <!-- Title and Description -->
         <div class="blog-hero-text">
-          <h1>NCCS Blog</h1>
-          <!-- <p class="hero-paragraph">
-                    News is information about current events shared through various media and is often called “hard news” to distinguish it from soft media.
-                </p> -->
+          <h1>NCCS ANNUAL HIMALAYAN MELA</h1>
+          <p class="hero-paragraph">
+            Posted on: Nov 26, 2025
+          </p>
         </div>
       </div>
     </div>
@@ -508,117 +631,125 @@
 
   <!-- Related Blogs Section -->
   <section class="related-blogs">
-    <div class="updates-carousel">
-      <div class="updates-viewport">
-        <div class="updates-track">
-          <!-- Update Card 1 -->
-          <div class="update-card">
-            <div class="update-image-wrapper">
-              <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela" />
-              <span class="update-badge">UPDATES</span>
-            </div>
-            <div class="update-content">
-              <div class="update-date">
-                <i class="fa-regular fa-calendar"></i>
-                Nov 26, 2025
-              </div>
-              <h3>NCCS Annual Himalayan Mela</h3>
-              <p>
-                Hundreds gathered to celebrate Nepali culture, enjoy
-                performances, and participate in workshops highlighting arts
-                and traditions.
-              </p>
-              <div class="update-footer">
-                <a href="#" class="show-more-btn">SHOW MORE</a>
-                <div class="update-social-icons">
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="container">
+      <!-- Header: Title Left + View All Right -->
+      <div class="related-header">
+        <h2 class="related-title">Latest Blogs</h2>
+        <a href="blog.html" class="view-all-btn">
+          View All News
+          <!-- <i class="fas fa-arrow-right"></i> -->
+        </a>
+      </div>
 
-          <!-- Update Card 2 -->
-          <div class="update-card">
-            <div class="update-image-wrapper">
-              <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela" />
-              <span class="update-badge">UPDATES</span>
-            </div>
-            <div class="update-content">
-              <div class="update-date">
-                <i class="fa-regular fa-calendar"></i>
-                Nov 26, 2025
+      <!-- Scrollable Carousel -->
+      <div class="updates-carousel">
+        <div class="updates-viewport">
+          <div class="updates-track">
+            <!-- Blog Card 1 -->
+            <article class="update-card">
+              <div class="update-image-wrapper">
+                <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela" />
+                <span class="update-badge">UPDATES</span>
               </div>
-              <h3>NCCS Annual Himalayan Mela</h3>
-              <p>
-                Hundreds gathered to celebrate Nepali culture, enjoy
-                performances, and participate in workshops highlighting arts
-                and traditions.
-              </p>
-              <div class="update-footer">
-                <a href="#" class="show-more-btn">SHOW MORE</a>
-                <div class="update-social-icons">
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
+              <div class="update-content">
+                <div class="update-date">
+                  <i class="fa-regular fa-calendar"></i>
+                  Nov 26, 2025
+                </div>
+                <h3>NCCS Annual Himalayan Mela</h3>
+                <p>
+                  Hundreds gathered to celebrate Nepali culture, enjoy performances, and participate in workshops
+                  highlighting arts and traditions.
+                </p>
+                <!-- Footer moved to bottom -->
+                <div class="update-footer">
+                  <a href="#" class="show-more-btn">SHOW MORE</a>
+                  <div class="update-social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </article>
 
-          <!-- Update Card 3 -->
-          <div class="update-card">
-            <div class="update-image-wrapper">
-              <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela" />
-              <span class="update-badge">UPDATES</span>
-            </div>
-            <div class="update-content">
-              <div class="update-date">
-                <i class="fa-regular fa-calendar"></i>
-                Nov 26, 2025
+            <!-- Blog Card 2 -->
+            <article class="update-card">
+              <div class="update-image-wrapper">
+                <img src="images/Mask group.png" alt="Community Picnic" />
+                <span class="update-badge">UPDATES</span>
               </div>
-              <h3>NCCS Annual Himalayan Mela</h3>
-              <p>
-                Hundreds gathered to celebrate Nepali culture, enjoy
-                performances, and participate in workshops highlighting arts
-                and traditions.
-              </p>
-              <div class="update-footer">
-                <a href="#" class="show-more-btn">SHOW MORE</a>
-                <div class="update-social-icons">
-                  <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
+              <div class="update-content">
+                <div class="update-date">
+                  <i class="fa-regular fa-calendar"></i>
+                  Oct 15, 2025
+                </div>
+                <h3>Community Picnic & Sports Day</h3>
+                <p>
+                  A joyful outdoor gathering filled with games, traditional food, and cultural activities for families.
+                </p>
+                <div class="update-footer">
+                  <a href="#" class="show-more-btn">SHOW MORE</a>
+                  <div class="update-social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </article>
 
-          <div class="update-card">
-            <div class="update-image-wrapper">
-              <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela" />
-              <span class="update-badge">UPDATES</span>
-            </div>
-            <div class="update-content">
-              <div class="update-date">
-                <i class="fa-regular fa-calendar"></i> Nov 26, 2025
+            <!-- Blog Card 3 -->
+            <article class="update-card">
+              <div class="update-image-wrapper">
+                <img src="images/Mask group.png" alt="Dance Workshop" />
+                <span class="update-badge">UPDATES</span>
               </div>
-              <h3>NCCS Annual Himalayan Mela</h3>
-              <p>
-                Hundreds gathered to celebrate Nepali culture, enjoy
-                performances, and participate in workshops highlighting arts
-                and traditions.
-              </p>
-              <div class="update-footer">
-                <a href="#" class="show-more-btn">SHOW MORE</a>
-                <div class="update-social-icons">
-                  <a href="#"><i class="fas fas-facebook"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
+              <div class="update-content">
+                <div class="update-date">
+                  <i class="fa-regular fa-calendar"></i>
+                  Sep 08, 2025
+                </div>
+                <h3>Traditional Dance Workshop</h3>
+                <p>
+                  Participants learned classical and folk Nepali dances from expert instructors.
+                </p>
+                <div class="update-footer">
+                  <a href="#" class="show-more-btn">SHOW MORE</a>
+                  <div class="update-social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
                 </div>
               </div>
-            </div>
+            </article>
+
+            <!-- Blog Card 4 -->
+            <article class="update-card">
+              <div class="update-image-wrapper">
+                <img src="images/Mask group.png" alt="Volunteer Event" />
+                <span class="update-badge">UPDATES</span>
+              </div>
+              <div class="update-content">
+                <div class="update-date">
+                  <i class="fa-regular fa-calendar"></i>
+                  Aug 20, 2025
+                </div>
+                <h3>Annual Volunteer Appreciation</h3>
+                <p>
+                  Recognizing the dedication of volunteers who support NCCS programs throughout the year.
+                </p>
+                <div class="update-footer">
+                  <a href="#" class="show-more-btn">SHOW MORE</a>
+                  <div class="update-social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </div>

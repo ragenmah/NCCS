@@ -615,10 +615,10 @@ header {
 
 .hero-paragraph {
     margin: 0 auto 40px;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 200;
-    line-height: 1.7;
-    max-width: 800px;
+    line-height: 1.6;
+    max-width: 1000px;
     /* Controls paragraph width - fits nicely in middle */
     padding: 0 20px;
 }
@@ -1393,7 +1393,7 @@ hr {
 .update-card {
     background: #fff;
     color: #333;
-    flex: 0 0 380px;
+    flex: 0 0 420px;
     /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
     overflow: hidden;
     right: 0;
@@ -1426,6 +1426,7 @@ hr {
 
 .update-content {
     padding: 15px 12px;
+    flex-grow: 1;
 }
 
 .update-date {
@@ -1447,13 +1448,21 @@ hr {
 .update-content p {
     font-size: 12px;
     line-height: 1.6;
+    margin: 12px 0;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: #717171;
     margin-bottom: 20px;
 }
 
 .update-footer {
     display: flex;
-    margin: auto;
+    padding-top: 12px;
+    margin-top: auto;
     justify-content: space-between;
     align-items: center;
 }

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nepalese Canadian Community Services</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/members.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/events.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
@@ -63,7 +63,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li class="dropdown">
-                        <a href="#" class="active">Directors <i class="fas fa-chevron-down"></i></a>
+                        <a href="#">Directors <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
                             <div class="dropdown-header">Explore Directors</div>
                             <ul class="dropdown-list">
@@ -95,7 +95,7 @@
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="#">Events <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="active">Events <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
                             <div class="dropdown-header">Explore Events</div>
                             <ul class="dropdown-list">
@@ -227,178 +227,129 @@
         </div>
     </header>
 
-    <!-- HERO CAROUSEL -->
-    <!-- Updated Hero Section for Board of Directors Page -->
-    <section class="hero">
-        <div class="carousel">
 
-            <div class="member-content">
-                <h1>Board of Directors</h1>
-                <p class="hero-paragraph">
-                    An executive directors is made up of key leaders, executives, and board members, and acts as a
-                    central decision-making body that sets strategic priorities, allocates resources, and ensures
-                    strong
-                    and effective governance.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-light">Life Members</a>
-                    <a href="#" class="btn btn-outline">Become a Member</a>
-                </div>
-                <div class="hero-container">
 
-                </div>
+
+
+
+
+    <section class="events-hero">
+        <div class="container">
+            <h1>NCCS EVENTS</h1>
+            <p>
+                NCCS organizes diverse events that bring together to collaborate, share knowledge, and drive community
+                impact.
+                From capacity-building workshops and cultural programs to policy dialogues and networking forums, our
+                events
+                foster meaningful connections and amplify the voices of alumni across Nepal & Canada.
+            </p>
+            <div class="hero-container">
+
             </div>
-
-
-
-
-            <!-- <button class="arrow left">&#10094;</button>
-            <button class="arrow right">&#10095;</button> -->
         </div>
-
-        <!-- <div class="dots">
-            <span class="dot active"></span>
-         </div> -->
     </section>
 
-
-
-
-    <!-- Modal Popup - Hidden by default -->
-    <div class="director-modal" id="director-modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-
-            <div class="modal-body">
-                <div>
-                    <div class="modal-image">
-                        <img src="bimal-basnet.jpg" alt="Bimal Basnet" id="modal-img">
-                    </div>
-                    <div class="modal-contact">
-                        <p><strong>Email:</strong> basnetbm@gmail.com</p>
-                        <p><strong>Phone:</strong> +1 (647) 740-6067</p>
-                    </div>
-                </div>
-                <div class="modal-info">
-                    <h2 class="modal-position">CHAIRPERSON</h2>
-                    <h3 class="modal-name">BIMAL BASNET</h3>
-
-                    <p class="modal-bio">
-                        Currently serving as the Chairperson of Nepalese Canadian Community Services (NCCS) and
-                        General Secretary of the Toronto Nepalese Sports Club (TNSC), he brings strong leadership and
-                        community engagement experience to his roles. He previously served as a Board Director for both
-                        Srijansil Nepali Samaj and NCCS. A reliable and trustworthy Realtor with over five years of
-                        professional experience at Homelife 247 Realty Inc., he has been assisting clients across the
-                        Greater
-                        Toronto Area (GTA). He holds a Master's Degree in Physics from Nepal, a Diploma in Computer
-                        Networking from Seneca College, and Real Estate Education from Humber College. Dedicated to
-                        building meaningful relationships, empowering communities, and making a positive impact in the
-                        lives of others, he continues to inspire trust and collaboration through his work.
-                    </p>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="board-page">
+    <!-- All Events Section -->
+    <section class="events-section">
         <div class="container">
-            <!-- Page Title & Filters -->
-            <div class="page-header">
-                <h1>Board of Directors</h1>
-                <div class="header-bottom">
-                    <!-- Director Tabs -->
-                    <div class="director-tabs">
-                        <a href="#" class="tab active" data-tab="current">CURRENT DIRECTORS</a>
-                        <a href="#" class="tab" data-tab="past">PAST DIRECTORS</a>
-                        <a href="#" class="tab" data-tab="adhoc">AD - HOC</a>
+            <!-- Header with Title and Tabs -->
+            <div class="events-header">
+                <h2>ALL EVENTS</h2>
+                <div class="events-tabs">
+                    <a href="#" class="active">All Events</a>
+                    <a href="#">Upcoming Events</a>
+                    <a href="#">Past Events</a>
+                </div>
+            </div>
+
+            <!-- Events Grid -->
+            <div class="events-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div class="event-image-wrapper"></div>
+                    <div class="event-content">
+                        <h3 class="event-title">NCCS ANNUAL GENERAL MEETING</h3>
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 25 December 2025, Saturday</span>
+                            <span><i class="fa-regular fa-clock"></i> 10:00 AM – 5:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Location</span>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- Year Select - Appears below tabs, aligned right -->
-                    <div class="year-select">
-                        <select>
-                            <option>2025-2027</option>
-                            <option>2023-2025</option>
-                            <option>2021-2023</option>
-                        </select>
+                <!-- Repeat cards for grid layout (6+ cards to show multiple rows) -->
+                <div class="event-card">
+                    <div class="event-image-wrapper">
+                        <img src="images/mela.jpg" alt="NCCS Annual Himalayan Mela Event" />
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">NCCS ANNUAL GENERAL MEETING</h3>
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 25 December 2025, Saturday</span>
+                            <span><i class="fa-regular fa-clock"></i> 10:00 AM – 5:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Location</span>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="event-card">
+                    <div class="event-image-wrapper"></div>
+                    <div class="event-content">
+                        <h3 class="event-title">NCCS ANNUAL GENERAL MEETING</h3>
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 25 December 2025, Saturday</span>
+                            <span><i class="fa-regular fa-clock"></i> 10:00 AM – 5:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Location</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image-wrapper"></div>
+                    <div class="event-content">
+                        <h3 class="event-title">NCCS ANNUAL GENERAL MEETING</h3>
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 25 December 2025, Saturday</span>
+                            <span><i class="fa-regular fa-clock"></i> 10:00 AM – 5:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Location</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image-wrapper"></div>
+                    <div class="event-content">
+                        <h3 class="event-title">NCCS ANNUAL GENERAL MEETING</h3>
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 25 December 2025, Saturday</span>
+                            <span><i class="fa-regular fa-clock"></i> 10:00 AM – 5:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Location</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image-wrapper"></div>
+                    <div class="event-content">
+                        <h3 class="event-title">NCCS ANNUAL GENERAL MEETING</h3>
+                        <div class="event-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 25 December 2025, Saturday</span>
+                            <span><i class="fa-regular fa-clock"></i> 10:00 AM – 5:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Location</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Team Tabs -->
-            <div class="team-tabs">
-                <a href="#" class="team-tab active">EXECUTIVE TEAMS</a>
-                <a href="#" class="team-tab">BOARD MEMBERS</a>
-                <a href="#" class="team-tab">ADVISORS</a>
-            </div>
-
-            <!-- Directors Grid -->
-            <div class="directors-grid">
-                <div class="board-director-card">
-                    <div class="director-image">
-                        <img src="images/director.png" alt="Bimal Basnet">
-                    </div>
-                    <div class="director-info">
-                        <span class="position">CHAIRPERSON</span>
-                        <h3>BIMAL BASNET</h3>
-                    </div>
+            <!-- Pagination -->
+            <div class="pagination">
+                <div class="buttons-wrapper">
+                    <button disabled>PREVIOUS</button>
+                    <button class="next-btn">NEXT →</button>
                 </div>
-
-                <div class="board-director-card">
-                    <div class="director-image">
-                        <img src="images/director.png" alt="Bimal Basnet">
-                    </div>
-                    <div class="director-info">
-                        <span class="position">CHAIRPERSON</span>
-                        <h3>BIMAL BASNET</h3>
-                    </div>
-                </div>
-
-                <div class="board-director-card">
-                    <div class="director-image">
-                        <img src="images/director.png" alt="Bimal Basnet">
-                    </div>
-                    <div class="director-info">
-                        <span class="position">CHAIRPERSON</span>
-                        <h3>BIMAL BASNET</h3>
-                    </div>
-                </div>
-
-                <div class="board-director-card">
-                    <div class="director-image">
-                        <img src="images/director.png" alt="Bimal Basnet">
-                    </div>
-                    <div class="director-info">
-                        <span class="position">CHAIRPERSON</span>
-                        <h3>BIMAL BASNET</h3>
-                    </div>
-                </div>
-
-                <div class="board-director-card">
-                    <div class="director-image">
-                        <img src="images/director.png" alt="Bimal Basnet">
-                    </div>
-                    <div class="director-info">
-                        <span class="position">CHAIRPERSON</span>
-                        <h3>BIMAL BASNET</h3>
-                    </div>
-                </div>
-
-                <div class="board-director-card">
-                    <div class="director-image">
-                        <img src="images/director.png" alt="Bimal Basnet">
-                    </div>
-                    <div class="director-info">
-                        <span class="position">CHAIRPERSON</span>
-                        <h3>BIMAL BASNET</h3>
-                    </div>
-                </div>
+                <span class="page-info">Page 1 of 10</span>
             </div>
         </div>
-
-
     </section>
 
 
@@ -499,81 +450,36 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script>
-        // JavaScript for Tab Switching & Year Select Visibility
-        document.querySelectorAll('.director-tabs .tab').forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.querySelectorAll('.director-tabs .tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
-                // Show year select only for PAST DIRECTORS
-                const yearSelect = document.querySelector('.year-select');
-                if (tab.textContent.trim() === 'PAST DIRECTORS') {
-                    yearSelect.classList.add('visible');
-                } else {
-                    yearSelect.classList.remove('visible');
-                }
-
-                // Future: Load content based on tab
-            });
-        });
-
-        // Team Tabs Switching
-        document.querySelectorAll('.team-tabs .team-tab').forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.querySelectorAll('.team-tabs .team-tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                // Future: Load content based on team type
-            });
-        });
-
         document.addEventListener("DOMContentLoaded", () => {
-            // Modal Functionality
-            const modal = document.getElementById('director-modal');
-            const modalImg = document.getElementById('modal-img');
-            const modalPosition = document.querySelector('.modal-position');
-            const modalName = document.querySelector('.modal-name');
-            const modalBio = document.querySelector('.modal-bio');
-            const modalContact = document.querySelector('.modal-contact');
-            const closeBtn = document.querySelector('.modal-close');
+            // JavaScript for Tab Switching & Year Select Visibility
+            document.querySelectorAll('.director-tabs .tab').forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.querySelectorAll('.director-tabs .tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
 
-            document.querySelectorAll('.board-director-card').forEach(card => {
-                card.addEventListener('click', () => {
-                    // Example data - in real app, use data attributes or fetch from object
-                    modalImg.src = card.querySelector('.director-image img').src;
-                    modalPosition.textContent = card.querySelector('.position').textContent;
-                    modalName.textContent = card.querySelector('h3').textContent;
+                    // Show year select only for PAST DIRECTORS
+                    const yearSelect = document.querySelector('.year-select');
+                    if (tab.textContent.trim() === 'PAST DIRECTORS') {
+                        yearSelect.classList.add('visible');
+                    } else {
+                        yearSelect.classList.remove('visible');
+                    }
 
-                    // Set bio and contact (you can store these in data attributes)
-                    modalBio.textContent = "Currently serving as the Chairperson of Nepalese Canadian Community Services (NCCS) and General Secretary of the Toronto Nepalese Sports Club (TNSC), he brings strong leadership and community engagement experience to his roles. He previously served as a Board Director for both Srijansil Nepali Samaj and NCCS. A reliable and trustworthy Realtor with over five years of professional experience at Homelife 247 Realty Inc., he has been assisting clients across the Greater Toronto Area (GTA). He holds a Master's Degree in Physics from Nepal, a Diploma in Computer Networking from Seneca College, and Real Estate Education from Humber College. Dedicated to building meaningful relationships, empowering communities, and making a positive impact in the lives of others, he continues to inspire trust and collaboration through his work.";
-
-                    modalContact.innerHTML = `
-            <p><strong>Email:</strong> basnetbm@gmail.com</p>
-            <p><strong>Phone:</strong> +1 (647) 740-6067</p>
-        `;
-
-                    modal.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent background scroll
+                    // Future: Load content based on tab
                 });
             });
-
-            closeBtn.addEventListener('click', () => {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-
-            // Close on background click
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
         });
+
+
+
+
     </script>
+
+    <script src="script.js"></script>
+    <script src="js/events.js"></script>
+
 </body>
 
 </html>
