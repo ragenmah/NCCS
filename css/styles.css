@@ -539,17 +539,13 @@ header {
     position: relative;
 }
 
-/* .slide {
-    display: none;
-} */
-
 .slide.active {
     display: block;
 }
 
 .slide {
-    /* position: relative;
-  height: 100vh; */
+    /* position: relative; */
+    /* height: 100vh; */
     display: none;
 }
 
