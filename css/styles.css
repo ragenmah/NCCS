@@ -368,7 +368,7 @@ header {
 }
 
 /* Search Dropdown Styles */
-.search-dropdown {
+/* .search-dropdown {
     position: relative;
 }
 
@@ -385,8 +385,7 @@ header {
 .search-dropdown:hover>a i,
 .search-dropdown.open>a i {
     color: #c00;
-    /* Red on active/hover */
-}
+ } */
 
 /* Search Menu - Wide and aligned to the right */
 .search-menu {

@@ -118,31 +118,43 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".dropdown > a").forEach((trigger) => {
     trigger.addEventListener("click", (e) => {
       e.preventDefault();
+
       const dropdown = trigger.parentElement;
 
+      // Close others
       document
         .querySelectorAll(".dropdown.open")
         .forEach((d) => d !== dropdown && d.classList.remove("open"));
 
+      // Toggle this dropdown
       dropdown.classList.toggle("open");
-    });
-  });
 
-  document.querySelectorAll(".search-dropdown").forEach((searchDrop) => {
-    searchDrop.addEventListener("click", (e) => {
-      if (window.innerWidth <= 992) {
-        e.preventDefault();
-        e.stopPropagation();
-        searchDrop.classList.toggle("open");
-
-        // Focus the input when opened
-        if (searchDrop.classList.contains("open")) {
-          const input = searchDrop.querySelector("input");
-          if (input) input.focus();
-        }
+      // ⭐ If this is the search dropdown → focus the input
+      if (
+        dropdown.classList.contains("search-item") &&
+        dropdown.classList.contains("open")
+      ) {
+        const input = dropdown.querySelector("input");
+        if (input) setTimeout(() => input.focus(), 50);
       }
     });
   });
+
+  // document.querySelectorAll(".search-dropdown").forEach((searchDrop) => {
+  //   const toggle = searchDrop.querySelector("a");
+  //   const input = searchDrop.querySelector("input");
+
+  //   toggle.addEventListener("click", (e) => {
+  //     e.preventDefault();
+  //     e.stopPropagation();
+
+  //     searchDrop.classList.toggle("open");
+
+  //     if (searchDrop.classList.contains("open")) {
+  //       setTimeout(() => input?.focus(), 50);
+  //     }
+  //   });
+  // });
 });
 
 // carousel
