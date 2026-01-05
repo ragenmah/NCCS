@@ -822,10 +822,11 @@
         /* padding: 0 40px; */
         font-size: 1rem;
         height: 100px;
-        border-left: 8px solid #B10020;
-        border-right: 8px solid #B10020;
+        border-left: 8px solid  var(--primary);
+        /* border-left: 8px solid #B10020; */
+        border-right: 8px solid var(--primary);
         border-top: none;
-        border-bottom: 8px solid #B10020;
+        border-bottom: 8px solid var(--primary);
     }
 }
 
