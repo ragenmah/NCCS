@@ -156,8 +156,13 @@ header {
   align-items: center;
 }
 
+
 .logo img {
   height: 60px;
+}
+
+.logo   {
+   z-index: 999;
 }
 
 /* Responsive adjustments */
@@ -264,15 +269,15 @@ header {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%;
-  /* very imp  */
+  /* top: 100%; */
+  /* very imp  top*/
   left: 0;
   right: 0;
   width: 100vw;
   margin-left: 0;
   background: var(--white);
   /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); */
-  z-index: 999;
+  z-index: 998;
 }
 
 /* Show on hover */
