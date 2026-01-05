@@ -1,13 +1,21 @@
 /* styles.css */
 :root {
-  --primary: #b10020; /* Main brand red */
-  --primary-dark: #a00; /* Hover/darker variant */
-  --secondary: #0F0F0F; /* Black */
-  --text-dark:#333; /* Main text */
-  --text-medium: #666; /* Secondary text */
-  --text-light:#aaa; /* Light text */
-  --border-light: #eee; /* Light borders */
-  --bg-light: #f9f9f9; /* Light backgrounds */
+  --primary: #b10020;
+  /* Main brand red */
+  --primary-dark: #a00;
+  /* Hover/darker variant */
+  --secondary: #0F0F0F;
+  /* Black */
+  --text-dark: #333;
+  /* Main text */
+  --text-medium: #666;
+  /* Secondary text */
+  --text-light: #aaa;
+  /* Light text */
+  --border-light: #eee;
+  /* Light borders */
+  --bg-light: #f9f9f9;
+  /* Light backgrounds */
   --white: #fff;
   --border-color: #717171;
 }
@@ -143,7 +151,7 @@ body {
 /* Header adjustments */
 header {
   background: var(--white);
-  border-bottom: 1px solid var( --border-light);
+  border-bottom: 1px solid var(--border-light);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -161,8 +169,8 @@ header {
   height: 60px;
 }
 
-.logo   {
-   z-index: 999;
+.logo {
+  z-index: 999;
 }
 
 /* Responsive adjustments */
@@ -202,7 +210,7 @@ header {
   justify-content: center;
 }
 
-.nav > ul {
+.nav>ul {
   display: flex;
   align-items: center;
   gap: 25px;
@@ -243,18 +251,18 @@ header {
   position: static;
 }
 
-.dropdown > a {
+.dropdown>a {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.dropdown > a i {
+.dropdown>a i {
   font-size: 10px;
   transition: transform 0.3s ease;
 }
 
-.dropdown:hover > a i {
+.dropdown:hover>a i {
   transform: rotate(180deg);
 }
 
@@ -269,7 +277,8 @@ header {
 .dropdown-menu {
   display: none;
   position: absolute;
-  /* top: 100%; */
+  /* pad */
+  top: 100%;
   /* very imp  top*/
   left: 0;
   right: 0;
@@ -372,7 +381,7 @@ header {
     color: gray;
 } */
 
-.menu-item.active > .toggle-sub {
+.menu-item.active>.toggle-sub {
   color: gray;
 }
 
@@ -848,7 +857,7 @@ header {
   min-height: 380px;
   padding: 40px 16px 16px;
   text-align: center;
-  border: 1px solid var( --border-light);
+  border: 1px solid var(--border-light);
   /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
   display: flex;
   flex-direction: column;
@@ -950,7 +959,7 @@ header {
 
 .programs-arrow,
 .updates-arrow {
-  background: var( --border-light);
+  background: var(--border-light);
   color: var(--border-color);
   border: none;
   width: 33px;
@@ -1042,8 +1051,8 @@ hr {
   color: var(--secondary);
   padding: 80px 0;
   text-align: center;
-  border-top: 2px solid var( --border-light);
-  border-bottom: 2px solid var( --border-light);
+  border-top: 2px solid var(--border-light);
+  border-bottom: 2px solid var(--border-light);
 }
 
 .upcoming-events h2 {
@@ -1068,7 +1077,7 @@ hr {
   /* padding-bottom: 8px; */
   margin-bottom: 15px;
 
-  border-bottom: 2px solid var( --border-light);
+  border-bottom: 2px solid var(--border-light);
   /* bottom border bar */
 }
 
@@ -1251,7 +1260,7 @@ hr {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
-  border-bottom: 1px solid var( --border-light);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .event-item:last-child {
@@ -1710,7 +1719,7 @@ hr {
 .director-info {
   background: var(--primary);
   color: var(--white);
-  border: 1px solid var( --border-light);
+  border: 1px solid var(--border-light);
   padding: 20px 15px;
   text-align: center;
 }
