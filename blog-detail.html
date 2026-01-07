@@ -1,859 +1,914 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NCCS Annual Himalayan Mela - NCCS Blog</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/members.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    .single-blog {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fbfbfb;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      border: 2px solid #e5e5e5;
-    }
-
-    .single-blog img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 20px;
-    }
-
-    .single-blog .date {
-      color: #999;
-      font-size: 0.9em;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-    }
-
-    .single-blog .date i {
-      margin-right: 8px;
-    }
-
-    .single-blog h1 {
-      font-size: 2.2em;
-      margin-bottom: 18px;
-      /*  color: #c00;*/
-    }
-
-    .single-blog p {
-      line-height: 1.8;
-      margin-bottom: 20px;
-      font-size: 1.1em;
-    }
-
-    .single-blog .social-share {
-      margin-top: 40px;
-      padding-top: 20px;
-      /* border-top: 1px solid #eee; */
-      display: flex;
-      justify-content: flex-end;
-      gap: 15px;
-    }
-
-    .single-blog .social-share a {
-      font-size: 1.5em;
-      color: #666;
-      transition: color 0.3s;
-    }
-
-    .single-blog .social-share a:hover {
-      color: #b10020;
-    }
-
-    .blog-single-hero {
-      background: #b10020;
-      color: white;
-      padding: 60px 0 40px;
-      position: relative;
-    }
-
-    .blog-single-hero .container {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .related-blogs {
-      padding: 50px 0;
-      /* background-color: #f9f9f9; */
-    }
-
-    .blog-image-wrapper {
-      position: relative;
-      overflow: hidden;
-      border-radius: 0px;
-      /* display: inline-block; */
-    }
-
-    .blog-image-wrapper img {
-      width: 100%;
-      /* height: 575px;
-        object-fit: fill; */
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    /* .blog-image-wrapper:hover img {
-        transform: scale(1.05); 
-      } */
-
-    .blog-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background-color: #fff;
-      /* Red to match your theme */
-      color: #000;
-      font-size: 0.85rem;
-      font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 0px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      z-index: 10;
-    }
-
-    /* Optional: Slight angle for more dynamic look (as sometimes seen in designs) */
-    .blog-badge {
-      transform: rotate(0deg);
-      /* Change to rotate(5deg) if you want a tilted badge */
-    }
-
-    .blog-hero-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .back-btn {
-      position: absolute;
-      left: 10px;
-      top: 20%;
-      transform: translateY(-50%);
-      color: #b10020;
-      font-size: 1.0rem;
-      width: 32px;
-      height: 32px;
-      /* background: rgba(255, 255, 255, 0.2); */
-      background: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.3s ease;
-      text-decoration: none;
-    }
-
-    .back-btn:hover {
-      background: rgba(255, 255, 255, 0.4);
-      color: white;
-    }
-
-    .blog-hero-text {
-      /* max-width: 800px; */
-    }
-
-    .blog-hero-text h1 {
-      font-size: 56px;
-
-      /* font-size: 2.8rem; */
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-
-    .blog-hero-text .hero-paragraph {
-      font-size: 16px;
-
-      /* font-size: 1.2rem; */
-      opacity: 0.95;
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .related-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .related-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #333;
-      margin: 0;
-    }
-
-    .view-all-btn {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background-color: #b10020;
-      color: white;
-      padding: 10px 20px;
-      /* border-radius: 6px; */
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s ease;
-      font-size: 1rem;
-    }
-
-    .view-all-btn:hover {
-      background-color: #a00;
-    }
-
-    .view-all-btn i {
-      font-size: 0.9rem;
-    }
-
-    /* Carousel Styles */
-    .updates-carousel {
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .updates-viewport {
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      /* Smooth iOS scroll */
-      scrollbar-width: thin;
-      -webkit-overflow-scrolling: touch;
-      /* Smooth scrolling on iOS */
-      scrollbar-width: none;
-      /* Firefox */
-      -ms-overflow-style: none;
-      /* IE and Edge */
-    }
-
-    .updates-viewport::-webkit-scrollbar {
-      display: none;
-      /* Chrome, Safari, and Opera */
-      height: 0;
-      width: 0;
-    }
-
-    .updates-viewport::-webkit-scrollbar-track {
-      background: #eee;
-      border-radius: 4px;
-    }
-
-    .updates-viewport::-webkit-scrollbar-thumb {
-      background: #b10020;
-      border-radius: 4px;
-    }
-
-    .updates-track {
-      display: flex;
-      gap: 24px;
-      padding: 10px 0;
-      min-width: max-content;
-      /* Ensures track doesn't collapse */
-      scroll-behavior: smooth;
-    }
-
-    .update-card {
-      flex: 0 0 320px;
-      max-width: 320px;
-      background: white;
-      /* border-radius: 12px; */
-      overflow: hidden;
-      /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease; */
-      display: flex;
-      flex-direction: column;
-      /* Important: enables footer at bottom */
-      height: auto;
-    }
-
-    /* .update-card:hover {
-      transform: translateY(-8px);
-    } */
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .related-header {
-        flex-direction: column;
-        align-items: flex-start;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NCCS Annual Himalayan Mela - NCCS Blog</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/members.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .single-blog {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+        background: #fbfbfb;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 2px solid #e5e5e5;
       }
 
-      .related-title {
-        font-size: 1.6rem;
+      .single-blog img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
       }
 
-      .update-card {
-        flex: 0 0 280px;
-      }
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .back-btn {
-        left: 15px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.4rem;
+      .single-blog .date {
+        color: #999;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
       }
 
-      .blog-hero-text h1 {
-        font-size: 2.2rem;
+      .single-blog .date i {
+        margin-right: 8px;
+      }
+
+      .single-blog h1 {
+        font-size: 2.2em;
+        margin-bottom: 18px;
+        /*  color: #c00;*/
+      }
+
+      .single-blog p {
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-size: 1.1em;
+      }
+
+      .single-blog .social-share {
+        margin-top: 40px;
+        padding-top: 20px;
+        /* border-top: 1px solid #eee; */
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+      }
+
+      .single-blog .social-share a {
+        font-size: 1.5em;
+        color: #666;
+        transition: color 0.3s;
+      }
+
+      .single-blog .social-share a:hover {
+        color: #b10020;
       }
 
       .blog-single-hero {
-        padding: 50px 0 30px;
+        background: #b10020;
+        color: white;
+        padding: 60px 0 40px;
+        position: relative;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <div class="top-bar">
-    <div class="container top-bar-container">
-      <div class="top-left">
-        <span class="contact-item">
-          <i class="fas fa-phone"></i>
-          <a href="tel:+14167359076">416 735 9076</a>
-        </span>
-        <span class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:info@nccs.com">info@nccs.com</a>
-        </span>
-      </div>
-      <div class="top-right">
-        <a href="#" class="top-link">Become a Member</a>
-        <a href="#" class="top-link calendar-link">
-          <i class="far fa-calendar"></i> Calendar
-        </a>
-        <div class="language-switcher">
-          <i class="fas fa-globe"></i>
-          <button class="lang-btn active" data-lang="en">EN</button>
-          <!-- <span class="separator">|</span> -->
-          <button class="lang-btn" data-lang="np">NP</button>
+      .blog-single-hero .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .related-blogs {
+        padding: 50px 0;
+        /* background-color: #f9f9f9; */
+      }
+
+      .blog-image-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0px;
+        /* display: inline-block; */
+      }
+
+      .blog-image-wrapper img {
+        width: 100%;
+        /* height: 575px;
+        object-fit: fill; */
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      /* .blog-image-wrapper:hover img {
+        transform: scale(1.05); 
+      } */
+
+      .blog-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background-color: #fff;
+        /* Red to match your theme */
+        color: #000;
+        font-size: 0.85rem;
+        font-weight: bold;
+        padding: 6px 12px;
+        border-radius: 0px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+      }
+
+      /* Optional: Slight angle for more dynamic look (as sometimes seen in designs) */
+      .blog-badge {
+        transform: rotate(0deg);
+        /* Change to rotate(5deg) if you want a tilted badge */
+      }
+
+      .blog-hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+       
+
+      .blog-hero-text {
+        /* max-width: 800px; */
+      }
+
+      .blog-hero-text h1 {
+        font-size: 56px;
+
+        /* font-size: 2.8rem; */
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+
+      .blog-hero-text .hero-paragraph {
+        font-size: 16px;
+
+        /* font-size: 1.2rem; */
+        opacity: 0.95;
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .related-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .related-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #333;
+        margin: 0;
+      }
+
+      .view-all-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #b10020;
+        color: white;
+        padding: 10px 20px;
+        /* border-radius: 6px; */
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.3s ease;
+        font-size: 1rem;
+      }
+
+      .view-all-btn:hover {
+        background-color: #a00;
+      }
+
+      .view-all-btn i {
+        font-size: 0.9rem;
+      }
+
+      /* Carousel Styles */
+      .updates-carousel {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .updates-viewport {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        /* Smooth iOS scroll */
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scrolling on iOS */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+      }
+
+      .updates-viewport::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, and Opera */
+        height: 0;
+        width: 0;
+      }
+
+      .updates-viewport::-webkit-scrollbar-track {
+        background: #eee;
+        border-radius: 4px;
+      }
+
+      .updates-viewport::-webkit-scrollbar-thumb {
+        background: #b10020;
+        border-radius: 4px;
+      }
+
+      .updates-track {
+        display: flex;
+        gap: 24px;
+        padding: 10px 0;
+        min-width: max-content;
+        /* Ensures track doesn't collapse */
+        scroll-behavior: smooth;
+      }
+
+      .update-card {
+        flex: 0 0 320px;
+        max-width: 320px;
+        background: white;
+        /* border-radius: 12px; */
+        overflow: hidden;
+        /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease; */
+        display: flex;
+        flex-direction: column;
+        /* Important: enables footer at bottom */
+        height: auto;
+      }
+
+      /* .update-card:hover {
+      transform: translateY(-8px);
+    } */
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .single-blog {
+          padding: 0px;
+          margin: 0px;background: var(--white);
+        }
+
+        .related-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .related-title {
+          font-size: 1.6rem;
+        }
+
+        .update-card {
+          flex: 0 0 280px;
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .back-btn {
+          /* left: 15px;
+          width: 40px;
+          height: 40px;
+          font-size: 1.4rem; */
+          display: none;
+        }
+
+        .blog-hero-text h1 {
+          font-size: 2.2rem;
+        }
+
+        .blog-single-hero {
+          padding: 50px 0 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <div class="top-left">
+          <span class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+14167359076">416 735 9076</a>
+          </span>
+          <span class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@nccs.com">info@nccs.com</a>
+          </span>
         </div>
-      </div>
-    </div>
-  </div>
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <div class="brand">
-          <a href="index.html">
-            <img src="./images/logo.png" alt="NCCS Logo" class="footer-logo" />
+        <div class="top-right">
+          <a href="#" class="top-link">Become a Member</a>
+          <a href="#" class="top-link calendar-link">
+            <i class="far fa-calendar"></i> Calendar
           </a>
-
-          <div class="powered-by">
-            Powered by <strong>LemFi</strong>
+          <div class="language-switcher">
+            <i class="fas fa-globe"></i>
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <!-- <span class="separator">|</span> -->
+            <button class="lang-btn" data-lang="np">NP</button>
           </div>
         </div>
       </div>
-      <nav class="nav">
-        <div class="nav-actions">
-          <button class="nav-toggle" aria-label="Toggle navigation">
-            <i class="fas fa-bars open-icon"></i>
-            <i class="fas fa-times close-icon"></i>
-          </button>
-        </div>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li class="dropdown">
-            <a href="#">Directors <i class="fas fa-chevron-down"></i></a>
-            <div class="dropdown-menu">
-              <div class="dropdown-header">Explore Directors</div>
-              <ul class="dropdown-list">
-                <li class="menu-item">
-                  <a href="#" class="toggle-sub">
-                    <i class="fas fa-arrow-right"></i> Life Members
-                  </a>
-
-                  <div class="sub-directors">
-                    <a href="members.html"><i class="fas fa-arrow-right"></i> Life Members 1.0</a>
-                    <a href="members.html"><i class="fas fa-arrow-right"></i> Life Members 2.0</a>
-                  </div>
-                </li>
-
-                <li class="menu-item">
-                  <a href="#" class="toggle-sub">
-                    <i class="fas fa-arrow-right"></i> General Members
-                  </a>
-
-                  <div class="sub-directors">
-                    <a href="members.html"><i class="fas fa-arrow-right"></i> General Members
-                      1.0</a>
-                    <a href="members.html"><i class="fas fa-arrow-right"></i> General Members
-                      2.0</a>
-                  </div>
-                </li>
-
-              </ul>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href="#">Events <i class="fas fa-chevron-down"></i></a>
-            <div class="dropdown-menu">
-              <div class="dropdown-header">Explore Events</div>
-              <ul class="dropdown-list">
-                <li>
-                  <a href="events.html"><i class="fas fa-arrow-right"></i> ACADEMIC</a>
-                </li>
-                <li>
-                  <a href="events.html"><i class="fas fa-arrow-right"></i> NETWORKING &
-                    PROFESSIONAL</a>
-                </li>
-                <li>
-                  <a href="events.html"><i class="fas fa-arrow-right"></i>COMMUNITY & SOCIAL</a>
-                </li>
-                <li>
-                  <a href="events.html"><i class="fas fa-arrow-right"></i> SPORTS & RECREATION</a>
-                </li>
-                <li>
-                  <a href="events.html"><i class="fas fa-arrow-right"></i> DIGITAL & HYBRID</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="active">Blog <i class="fas fa-chevron-down"></i></a>
-            <div class="dropdown-menu">
-              <div class="dropdown-header">EXPLORE BLOGS</div>
-              <ul class="dropdown-list">
-                <li>
-                  <a href="blog.html"><i class="fas fa-arrow-right"></i> INFORMATIONAL</a>
-                </li>
-                <li>
-                  <a href="blog.html"><i class="fas fa-arrow-right"></i> EDUCATIONAL</a>
-                </li>
-                <li>
-                  <a href="blog.html"><i class="fas fa-arrow-right"></i>NEWS & UPDATES</a>
-                </li>
-                <li>
-                  <a href="blog.html"><i class="fas fa-arrow-right"></i> OPINION & THOUGHT</a>
-                </li>
-                <li>
-                  <a href="blog.html"><i class="fas fa-arrow-right"></i> BUSINESS &
-                    PROFESSIONAL</a>
-                </li>
-                <li>
-                  <a href="blog.html"><i class="fas fa-arrow-right"></i> TECHNICAL & DIGITAL</a>
-                </li>
-                <li>
-                  <a href="blog.html"><i class="fas fa-arrow-right"></i> INSPIRATIONAL</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="#">Membership</a></li>
-          <li><a href="#">Contact us</a></li>
-          <!-- Updated "More" Dropdown HTML -->
-          <li class="dropdown  ">
-            <a href="#">More <i class="fas fa-chevron-down"></i></a>
-            <div class="dropdown-menu ">
-              <div class="dropdown-inner">
-
-                <div class="dropdown-header">EXPLORE MORE</div>
-                <div class="dropdown-columns">
-                  <ul class="dropdown-column">
-                    <li>
-                      <a href="#"><i class="fas fa-arrow-right"></i> PRESIDENT'S
-                        MESSAGE</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fas fa-arrow-right"></i> VOLUNTEER</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fas fa-arrow-right"></i> DOCUMENTS</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fas fa-arrow-right"></i> LATEST UPDATES</a>
-                    </li>
-                  </ul>
-                  <ul class="dropdown-column ">
-                    <li>
-                      <a href="#"><i class="fas fa-arrow-right"></i> CAREER</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fas fa-arrow-right"></i> FAQS</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fas fa-arrow-right"></i> PHONE NUMBERS</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-          </li>
-          <!-- Updated Search Item with Dropdown -->
-          <li class="search-item dropdown  search-dropdown  ">
-            <a href="#" class="search-toggle">
-              <span class="search-text">Search</span><i class="fas fa-search"></i>
-
+    </div>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <div class="brand">
+            <a href="index.html">
+              <img
+                src="./images/logo.png"
+                alt="NCCS Logo"
+                class="footer-logo"
+              />
             </a>
-            <div class="dropdown-menu  ">
-              <div class="search-input-wrapper">
-                <i class="fas fa-search search-icon-inside"></i>
-                <input type="text" placeholder="Search nccs.com" autofocus />
-              </div>
-              <div class="search-suggestions">
-                <div class="suggestions-header">QUICK LINKS</div>
-                <ul>
-                  <li>
-                    <a href="#"><i class="fas fa-arrow-right"></i> ABOUT US</a>
+
+            <div class="powered-by">Powered by <strong>LemFi</strong></div>
+          </div>
+        </div>
+        <nav class="nav">
+          <div class="nav-actions">
+            <button class="nav-toggle" aria-label="Toggle navigation">
+              <i class="fas fa-bars open-icon"></i>
+              <i class="fas fa-times close-icon"></i>
+            </button>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li class="dropdown">
+              <a href="#">Directors <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">Explore Directors</div>
+                <ul class="dropdown-list">
+                  <li class="menu-item">
+                    <a href="#" class="toggle-sub">
+                      <i class="fas fa-arrow-right"></i> Life Members
+                    </a>
+
+                    <div class="sub-directors">
+                      <a href="members.html"
+                        ><i class="fas fa-arrow-right"></i> Life Members 1.0</a
+                      >
+                      <a href="members.html"
+                        ><i class="fas fa-arrow-right"></i> Life Members 2.0</a
+                      >
+                    </div>
                   </li>
-                  <li>
-                    <a href="#"><i class="fas fa-arrow-right"></i> PROGRAM SERVICES</a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fas fa-arrow-right"></i> EVENTS</a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fas fa-arrow-right"></i> MEMBERSHIP</a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fas fa-arrow-right"></i> VOLUNTEER</a>
+
+                  <li class="menu-item">
+                    <a href="#" class="toggle-sub">
+                      <i class="fas fa-arrow-right"></i> General Members
+                    </a>
+
+                    <div class="sub-directors">
+                      <a href="members.html"
+                        ><i class="fas fa-arrow-right"></i> General Members
+                        1.0</a
+                      >
+                      <a href="members.html"
+                        ><i class="fas fa-arrow-right"></i> General Members
+                        2.0</a
+                      >
+                    </div>
                   </li>
                 </ul>
               </div>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <section class="blog-single-hero">
-    <div class="container">
-      <div class="blog-hero-content">
-        <!-- Back Button -->
-        <a href="blog.html" class="back-btn">
-          <i class="fas fa-chevron-left"></i>
-        </a>
+            </li>
+            <li class="dropdown">
+              <a href="#">Events <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">Explore Events</div>
+                <ul class="dropdown-list">
+                  <li>
+                    <a href="events.html"
+                      ><i class="fas fa-arrow-right"></i> ACADEMIC</a
+                    >
+                  </li>
+                  <li>
+                    <a href="events.html"
+                      ><i class="fas fa-arrow-right"></i> NETWORKING &
+                      PROFESSIONAL</a
+                    >
+                  </li>
+                  <li>
+                    <a href="events.html"
+                      ><i class="fas fa-arrow-right"></i>COMMUNITY & SOCIAL</a
+                    >
+                  </li>
+                  <li>
+                    <a href="events.html"
+                      ><i class="fas fa-arrow-right"></i> SPORTS & RECREATION</a
+                    >
+                  </li>
+                  <li>
+                    <a href="events.html"
+                      ><i class="fas fa-arrow-right"></i> DIGITAL & HYBRID</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="active"
+                >Blog <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">EXPLORE BLOGS</div>
+                <ul class="dropdown-list">
+                  <li>
+                    <a href="blog.html"
+                      ><i class="fas fa-arrow-right"></i> INFORMATIONAL</a
+                    >
+                  </li>
+                  <li>
+                    <a href="blog.html"
+                      ><i class="fas fa-arrow-right"></i> EDUCATIONAL</a
+                    >
+                  </li>
+                  <li>
+                    <a href="blog.html"
+                      ><i class="fas fa-arrow-right"></i>NEWS & UPDATES</a
+                    >
+                  </li>
+                  <li>
+                    <a href="blog.html"
+                      ><i class="fas fa-arrow-right"></i> OPINION & THOUGHT</a
+                    >
+                  </li>
+                  <li>
+                    <a href="blog.html"
+                      ><i class="fas fa-arrow-right"></i> BUSINESS &
+                      PROFESSIONAL</a
+                    >
+                  </li>
+                  <li>
+                    <a href="blog.html"
+                      ><i class="fas fa-arrow-right"></i> TECHNICAL & DIGITAL</a
+                    >
+                  </li>
+                  <li>
+                    <a href="blog.html"
+                      ><i class="fas fa-arrow-right"></i> INSPIRATIONAL</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="#">Membership</a></li>
+            <li><a href="#">Contact us</a></li>
+            <!-- Updated "More" Dropdown HTML -->
+            <li class="dropdown">
+              <a href="#">More <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-menu">
+                <div class="dropdown-inner">
+                  <div class="dropdown-header">EXPLORE MORE</div>
+                  <div class="dropdown-columns">
+                    <ul class="dropdown-column">
+                      <li>
+                        <a href="#"
+                          ><i class="fas fa-arrow-right"></i> PRESIDENT'S
+                          MESSAGE</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><i class="fas fa-arrow-right"></i> VOLUNTEER</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><i class="fas fa-arrow-right"></i> DOCUMENTS</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><i class="fas fa-arrow-right"></i> LATEST UPDATES</a
+                        >
+                      </li>
+                    </ul>
+                    <ul class="dropdown-column">
+                      <li>
+                        <a href="#"
+                          ><i class="fas fa-arrow-right"></i> CAREER</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"><i class="fas fa-arrow-right"></i> FAQS</a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><i class="fas fa-arrow-right"></i> PHONE NUMBERS</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- Updated Search Item with Dropdown -->
+            <li class="search-item dropdown search-dropdown">
+              <a href="#" class="search-toggle">
+                <span class="search-text">Search</span
+                ><i class="fas fa-search"></i>
+              </a>
+              <div class="dropdown-menu">
+                <div class="search-input-wrapper">
+                  <i class="fas fa-search search-icon-inside"></i>
+                  <input type="text" placeholder="Search nccs.com" autofocus />
+                </div>
+                <div class="search-suggestions">
+                  <div class="suggestions-header">QUICK LINKS</div>
+                  <ul>
+                    <li>
+                      <a href="#"
+                        ><i class="fas fa-arrow-right"></i> ABOUT US</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fas fa-arrow-right"></i> PROGRAM SERVICES</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"><i class="fas fa-arrow-right"></i> EVENTS</a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fas fa-arrow-right"></i> MEMBERSHIP</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fas fa-arrow-right"></i> VOLUNTEER</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="blog-single-hero">
+      <div class="container">
+        <div class="blog-hero-content">
+          <!-- Back Button -->
+          <a href="blog.html" class="back-btn">
+            <i class="fas fa-chevron-left"></i>
+          </a>
 
-        <!-- Title and Description -->
-        <div class="blog-hero-text">
-          <h1>NCCS ANNUAL HIMALAYAN MELA</h1>
-          <p class="hero-paragraph">
-            Posted on: Nov 26, 2025
-          </p>
+          <!-- Title and Description -->
+          <div class="blog-hero-text">
+            <h1>NCCS ANNUAL HIMALAYAN MELA</h1>
+            <p class="hero-paragraph">Posted on: Nov 26, 2025</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Single Blog Post Content -->
-  <section class="single-blog-section">
-    <div class="container">
-      <article class="single-blog">
-        <div class="blog-image-wrapper">
-          <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela" />
-          <span class="blog-badge">UPDATES</span>
-        </div>
-        <div class="date">
-          <i class="fa-regular fa-calendar"></i>
-          Nov 26, 2025
-        </div>
-        <h1>NCCS Annual Himalayan Mela</h1>
-        <p>
-          Hundreds of people from diverse backgrounds came together to
-          celebrate the richness and diversity of Nepali culture through a
-          vibrant, day-long cultural program filled with color, music, and
-          meaningful interaction. The event served as a powerful platform to
-          showcase Nepal’s deep-rooted traditions, artistic heritage, and
-          cultural values while strengthening the sense of unity within the
-          community.
-        </p>
-        <p>
-          The program featured captivating traditional music and dance
-          performances representing various regions of Nepal. Performers,
-          dressed in authentic ethnic attire, brought the stage to life with
-          folk dances such as Tamang Selo, Newari Lakhey dance, Tharu cultural
-          performances, and classical Nepali music that reflected the
-          country’s cultural diversity. Each performance was met with
-          enthusiastic applause, as audiences experienced the rhythm, stories,
-          and emotions embedded in Nepal’s cultural expressions.
-        </p>
-        <p>
-          In addition to performances, the event included cultural showcases
-          highlighting traditional Nepali clothing, ornaments, art, and
-          handicrafts. Informative displays and exhibitions allowed attendees
-          to learn about the historical and cultural significance behind
-          different traditions, festivals, and lifestyles from across Nepal.
-          These showcases helped bridge generations, enabling younger
-          attendees to connect with their roots while offering others a deeper
-          understanding of Nepali heritage.
-        </p>
-        <p>
-          Interactive workshops were another key highlight of the event.
-          Participants of all ages engaged in hands-on sessions such as
-          traditional dance lessons, folk music demonstrations, art and craft
-          activities, and cultural storytelling. These workshops encouraged
-          active participation, making the cultural experience immersive and
-          educational rather than purely observational.
-        </p>
-        <p>
-          Overall, the event successfully celebrated Nepal’s rich arts,
-          heritage, and traditions while fostering a strong sense of community
-          connection and cultural pride. By bringing people together through
-          shared experiences, the program reinforced the importance of
-          preserving and promoting Nepali culture for future generations,
-          leaving attendees with lasting memories and a renewed appreciation
-          for their cultural identity.
-        </p>
+    <!-- Single Blog Post Content -->
+    <section class="single-blog-section">
+      <div class="container">
+        <article class="single-blog">
+          <div class="blog-image-wrapper">
+            <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela" />
+            <span class="blog-badge">UPDATES</span>
+          </div>
+          <div class="date">
+            <i class="fa-regular fa-calendar"></i>
+            Nov 26, 2025
+          </div>
+          <h1>NCCS Annual Himalayan Mela</h1>
+          <p>
+            Hundreds of people from diverse backgrounds came together to
+            celebrate the richness and diversity of Nepali culture through a
+            vibrant, day-long cultural program filled with color, music, and
+            meaningful interaction. The event served as a powerful platform to
+            showcase Nepal’s deep-rooted traditions, artistic heritage, and
+            cultural values while strengthening the sense of unity within the
+            community.
+          </p>
+          <p>
+            The program featured captivating traditional music and dance
+            performances representing various regions of Nepal. Performers,
+            dressed in authentic ethnic attire, brought the stage to life with
+            folk dances such as Tamang Selo, Newari Lakhey dance, Tharu cultural
+            performances, and classical Nepali music that reflected the
+            country’s cultural diversity. Each performance was met with
+            enthusiastic applause, as audiences experienced the rhythm, stories,
+            and emotions embedded in Nepal’s cultural expressions.
+          </p>
+          <p>
+            In addition to performances, the event included cultural showcases
+            highlighting traditional Nepali clothing, ornaments, art, and
+            handicrafts. Informative displays and exhibitions allowed attendees
+            to learn about the historical and cultural significance behind
+            different traditions, festivals, and lifestyles from across Nepal.
+            These showcases helped bridge generations, enabling younger
+            attendees to connect with their roots while offering others a deeper
+            understanding of Nepali heritage.
+          </p>
+          <p>
+            Interactive workshops were another key highlight of the event.
+            Participants of all ages engaged in hands-on sessions such as
+            traditional dance lessons, folk music demonstrations, art and craft
+            activities, and cultural storytelling. These workshops encouraged
+            active participation, making the cultural experience immersive and
+            educational rather than purely observational.
+          </p>
+          <p>
+            Overall, the event successfully celebrated Nepal’s rich arts,
+            heritage, and traditions while fostering a strong sense of community
+            connection and cultural pride. By bringing people together through
+            shared experiences, the program reinforced the importance of
+            preserving and promoting Nepali culture for future generations,
+            leaving attendees with lasting memories and a renewed appreciation
+            for their cultural identity.
+          </p>
 
-        <div class="social-share">
-          <a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
-          <!-- <a href="#" aria-label="Share on LinkedIn"
+          <div class="social-share">
+            <a href="#" aria-label="Share on Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Share on Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <!-- <a href="#" aria-label="Share on LinkedIn"
               ><i class="fab fa-linkedin-in"></i
             ></a> -->
-          <a href="#" aria-label="Share on Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Related Blogs Section -->
-  <section class="related-blogs">
-    <div class="container">
-      <div class="related-header">
-        <h2 class="related-title">Latest Blogs</h2>
-        <a href="blog.html" class="view-all-btn">
-          VIEW ALL NEWS
-          <!-- <i class="fas fa-arrow-right"></i> -->
-        </a>
-      </div>
-
-      <!-- Scrollable Carousel -->
-      <div class="updates-carousel">
-        <div class="updates-viewport">
-          <div class="updates-track">
-            <!-- Blog Card 1 -->
-            <article class="update-card">
-              <div class="update-image-wrapper">
-                <img src="images/Mask group.png" alt="NCCS Annual Himalayan Mela" />
-                <span class="update-badge">UPDATES</span>
-              </div>
-              <div class="update-content">
-                <div class="update-date">
-                  <i class="fa-regular fa-calendar"></i>
-                  Nov 26, 2025
-                </div>
-                <h3>NCCS Annual Himalayan Mela</h3>
-                <p>
-                  Hundreds gathered to celebrate Nepali culture, enjoy performances, and participate in workshops
-                  highlighting arts and traditions.
-                </p>
-                <!-- Footer moved to bottom -->
-                <div class="update-footer">
-                  <a href="#" class="show-more-btn">SHOW MORE</a>
-                  <div class="update-social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Blog Card 2 -->
-            <article class="update-card">
-              <div class="update-image-wrapper">
-                <img src="images/Mask group.png" alt="Community Picnic" />
-                <span class="update-badge">UPDATES</span>
-              </div>
-              <div class="update-content">
-                <div class="update-date">
-                  <i class="fa-regular fa-calendar"></i>
-                  Oct 15, 2025
-                </div>
-                <h3>Community Picnic & Sports Day</h3>
-                <p>
-                  A joyful outdoor gathering filled with games, traditional food, and cultural activities for families.
-                </p>
-                <div class="update-footer">
-                  <a href="#" class="show-more-btn">SHOW MORE</a>
-                  <div class="update-social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Blog Card 3 -->
-            <article class="update-card">
-              <div class="update-image-wrapper">
-                <img src="images/Mask group.png" alt="Dance Workshop" />
-                <span class="update-badge">UPDATES</span>
-              </div>
-              <div class="update-content">
-                <div class="update-date">
-                  <i class="fa-regular fa-calendar"></i>
-                  Sep 08, 2025
-                </div>
-                <h3>Traditional Dance Workshop</h3>
-                <p>
-                  Participants learned classical and folk Nepali dances from expert instructors.
-                </p>
-                <div class="update-footer">
-                  <a href="#" class="show-more-btn">SHOW MORE</a>
-                  <div class="update-social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Blog Card 4 -->
-            <article class="update-card">
-              <div class="update-image-wrapper">
-                <img src="images/Mask group.png" alt="Volunteer Event" />
-                <span class="update-badge">UPDATES</span>
-              </div>
-              <div class="update-content">
-                <div class="update-date">
-                  <i class="fa-regular fa-calendar"></i>
-                  Aug 20, 2025
-                </div>
-                <h3>Annual Volunteer Appreciation</h3>
-                <p>
-                  Recognizing the dedication of volunteers who support NCCS programs throughout the year.
-                </p>
-                <div class="update-footer">
-                  <a href="#" class="show-more-btn">SHOW MORE</a>
-                  <div class="update-social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <a href="#" aria-label="Share on Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
           </div>
-        </div>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Newsletter Section -->
-  <section class="newsletter">
-    <div class="container">
-      <h2>Subscribe to our Newsletter!</h2>
-      <p class="subtitle">
-        Become part of a growing community dedicated to culture and service.
-      </p>
-
-      <form class="newsletter-form">
-        <div class="input-wrapper">
-          <i class="fa-regular fa-envelope"></i>
-          <input type="email" placeholder="ENTER YOUR EMAIL" required />
-        </div>
-        <button type="submit">SUBSCRIBE NOW</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer Section - Matches the Image Exactly -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <!-- Logo + Description -->
-      <div class="footer-logo-desc">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="images/logo.png" alt="NCCS Logo" />
-          </div>
-
-          <div class="powered-by">Powered by <strong>LemFi</strong></div>
-        </div>
-
-        <p class="footer-description">
-          Nepalese Canadian Community Services is dedicated to preserving
-          culture, providing services, and building a stronger community.
-        </p>
-      </div>
-
-      <!-- Columns -->
-      <div class="footer-columns">
-        <!-- Quick Links -->
-        <div class="footer-column">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Program & Services</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Membership</a></li>
-            <li><a href="#">Volunteer</a></li>
-          </ul>
-        </div>
-
-        <!-- Resources -->
-        <div class="footer-column">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Documents</a></li>
-            <li><a href="#">Latest Updates</a></li>
-            <li><a href="#">Media Coverages</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Help Desk</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="footer-column">
-          <h4>Contact Info</h4>
-          <p class="address">123 Community Street, Toronto, ON</p>
-          <p class="phone">+1 (234) 567-890</p>
-          <p class="email"><a href="mailto:info@nccs.ca">info@nccs.ca</a></p>
-          <p class="hours">Mon-Fri | 9AM-5PM</p>
-        </div>
-      </div>
-
-      <!-- Social Icons -->
-      <div class="social-icons">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="footer-bottom">
+    <!-- Related Blogs Section -->
+    <section class="related-blogs">
       <div class="container">
-        <p class="copyright">
-          &copy; 2025 Nepalese Canadian Community Services. All Rights
-          Reserved.
-        </p>
-        <ul class="legal-links">
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-          <li><a href="#">Sitemap</a></li>
-        </ul>
+        <div class="related-header">
+          <h2 class="related-title">Latest Blogs</h2>
+          <a href="blog.html" class="view-all-btn">
+            VIEW ALL NEWS
+            <!-- <i class="fas fa-arrow-right"></i> -->
+          </a>
+        </div>
+
+        <!-- Scrollable Carousel -->
+        <div class="updates-carousel">
+          <div class="updates-viewport">
+            <div class="updates-track">
+              <!-- Blog Card 1 -->
+              <article class="update-card">
+                <div class="update-image-wrapper">
+                  <img
+                    src="images/Mask group.png"
+                    alt="NCCS Annual Himalayan Mela"
+                  />
+                  <span class="update-badge">UPDATES</span>
+                </div>
+                <div class="update-content">
+                  <div class="update-date">
+                    <i class="fa-regular fa-calendar"></i>
+                    Nov 26, 2025
+                  </div>
+                  <h3>NCCS Annual Himalayan Mela</h3>
+                  <p>
+                    Hundreds gathered to celebrate Nepali culture, enjoy
+                    performances, and participate in workshops highlighting arts
+                    and traditions.
+                  </p>
+                  <!-- Footer moved to bottom -->
+                  <div class="update-footer">
+                    <a href="#" class="show-more-btn">SHOW MORE</a>
+                    <div class="update-social-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Blog Card 2 -->
+              <article class="update-card">
+                <div class="update-image-wrapper">
+                  <img src="images/Mask group.png" alt="Community Picnic" />
+                  <span class="update-badge">UPDATES</span>
+                </div>
+                <div class="update-content">
+                  <div class="update-date">
+                    <i class="fa-regular fa-calendar"></i>
+                    Oct 15, 2025
+                  </div>
+                  <h3>Community Picnic & Sports Day</h3>
+                  <p>
+                    A joyful outdoor gathering filled with games, traditional
+                    food, and cultural activities for families.
+                  </p>
+                  <div class="update-footer">
+                    <a href="#" class="show-more-btn">SHOW MORE</a>
+                    <div class="update-social-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Blog Card 3 -->
+              <article class="update-card">
+                <div class="update-image-wrapper">
+                  <img src="images/Mask group.png" alt="Dance Workshop" />
+                  <span class="update-badge">UPDATES</span>
+                </div>
+                <div class="update-content">
+                  <div class="update-date">
+                    <i class="fa-regular fa-calendar"></i>
+                    Sep 08, 2025
+                  </div>
+                  <h3>Traditional Dance Workshop</h3>
+                  <p>
+                    Participants learned classical and folk Nepali dances from
+                    expert instructors.
+                  </p>
+                  <div class="update-footer">
+                    <a href="#" class="show-more-btn">SHOW MORE</a>
+                    <div class="update-social-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Blog Card 4 -->
+              <article class="update-card">
+                <div class="update-image-wrapper">
+                  <img src="images/Mask group.png" alt="Volunteer Event" />
+                  <span class="update-badge">UPDATES</span>
+                </div>
+                <div class="update-content">
+                  <div class="update-date">
+                    <i class="fa-regular fa-calendar"></i>
+                    Aug 20, 2025
+                  </div>
+                  <h3>Annual Volunteer Appreciation</h3>
+                  <p>
+                    Recognizing the dedication of volunteers who support NCCS
+                    programs throughout the year.
+                  </p>
+                  <div class="update-footer">
+                    <a href="#" class="show-more-btn">SHOW MORE</a>
+                    <div class="update-social-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="script.js"></script>
-</body>
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Subscribe to our Newsletter!</h2>
+        <p class="subtitle">
+          Become part of a growing community dedicated to culture and service.
+        </p>
 
+        <form class="newsletter-form">
+          <div class="input-wrapper">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="email" placeholder="ENTER YOUR EMAIL" required />
+          </div>
+          <button type="submit">SUBSCRIBE NOW</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer Section - Matches the Image Exactly -->
+    <footer class="footer">
+      <div class="container footer-container">
+        <!-- Logo + Description -->
+        <div class="footer-logo-desc">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="images/logo.png" alt="NCCS Logo" />
+            </div>
+
+            <div class="powered-by">Powered by <strong>LemFi</strong></div>
+          </div>
+
+          <p class="footer-description">
+            Nepalese Canadian Community Services is dedicated to preserving
+            culture, providing services, and building a stronger community.
+          </p>
+        </div>
+
+        <!-- Columns -->
+        <div class="footer-columns">
+          <!-- Quick Links -->
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Program & Services</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Membership</a></li>
+              <li><a href="#">Volunteer</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Documents</a></li>
+              <li><a href="#">Latest Updates</a></li>
+              <li><a href="#">Media Coverages</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Help Desk</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-column">
+            <h4>Contact Info</h4>
+            <p class="address">123 Community Street, Toronto, ON</p>
+            <p class="phone">+1 (234) 567-890</p>
+            <p class="email"><a href="mailto:info@nccs.ca">info@nccs.ca</a></p>
+            <p class="hours">Mon-Fri | 9AM-5PM</p>
+          </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright">
+            &copy; 2025 Nepalese Canadian Community Services. All Rights
+            Reserved.
+          </p>
+          <ul class="legal-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
