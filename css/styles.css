@@ -1938,7 +1938,7 @@ hr {
   color: var(--white);
   font-size: 1.2rem;
   margin-bottom: 25px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .footer-column ul {

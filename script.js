@@ -141,51 +141,51 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const dropdownTriggers = document.querySelectorAll(".dropdown > a");
+  if (window.innerWidth > 996)
+    dropdownTriggers.forEach((trigger) => {
+      const dropdown = trigger.parentElement;
+      let openedByHover = false;
 
-  dropdownTriggers.forEach((trigger) => {
-    const dropdown = trigger.parentElement;
-    let openedByHover = false;
+      const openDropdown = () => {
+        document
+          .querySelectorAll(".dropdown.open")
+          .forEach((d) => d !== dropdown && d.classList.remove("open"));
 
-    const openDropdown = () => {
-      document
-        .querySelectorAll(".dropdown.open")
-        .forEach((d) => d !== dropdown && d.classList.remove("open"));
+        dropdown.classList.add("open");
 
-      dropdown.classList.add("open");
+        // Focus input if search dropdown
+        if (dropdown.classList.contains("search-item")) {
+          const input = dropdown.querySelector("input");
+          if (input) setTimeout(() => input.focus(), 50);
+        }
+      };
 
-      // Focus input if search dropdown
-      if (dropdown.classList.contains("search-item")) {
-        const input = dropdown.querySelector("input");
-        if (input) setTimeout(() => input.focus(), 50);
-      }
-    };
+      // CLICK OPEN (forces focus)
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        openedByHover = false;
 
-    // CLICK OPEN (forces focus)
-    trigger.addEventListener("click", (e) => {
-      e.preventDefault();
-      openedByHover = false; // user intentionally clicked
+        if (dropdown.classList.contains("open")) {
+          dropdown.classList.remove("open");
+          return;
+        }
 
-      if (dropdown.classList.contains("open")) {
-        dropdown.classList.remove("open");
-        return;
-      }
+        openDropdown();
+      });
 
-      openDropdown();
+      dropdown.addEventListener("mouseenter", () => {
+        openedByHover = true;
+        openDropdown();
+      });
+
+      // ONLY CLOSE ON HOVER-OUT IF IT WAS HOVER-OPENED
+
+      dropdown.addEventListener("mouseleave", () => {
+        if (openedByHover) {
+          dropdown.classList.remove("open");
+        }
+      });
     });
-
-    // HOVER OPEN
-    dropdown.addEventListener("mouseenter", () => {
-      openedByHover = true;
-      openDropdown();
-    });
-
-    // ONLY CLOSE ON HOVER-OUT IF IT WAS HOVER-OPENED
-    dropdown.addEventListener("mouseleave", () => {
-      if (openedByHover) {
-        dropdown.classList.remove("open");
-      }
-    });
-  });
 
   // document.querySelectorAll(".search-dropdown").forEach((searchDrop) => {
   //   const toggle = searchDrop.querySelector("a");
