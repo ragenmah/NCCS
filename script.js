@@ -129,13 +129,60 @@ document.addEventListener("DOMContentLoaded", () => {
       // Toggle this dropdown
       dropdown.classList.toggle("open");
 
-      // ⭐ If this is the search dropdown → focus the input
+      //   If this is the search dropdown → focus the input
       if (
         dropdown.classList.contains("search-item") &&
         dropdown.classList.contains("open")
       ) {
         const input = dropdown.querySelector("input");
         if (input) setTimeout(() => input.focus(), 50);
+      }
+    });
+  });
+
+  const dropdownTriggers = document.querySelectorAll(".dropdown > a");
+
+  dropdownTriggers.forEach((trigger) => {
+    const dropdown = trigger.parentElement;
+    let openedByHover = false;
+
+    const openDropdown = () => {
+      document
+        .querySelectorAll(".dropdown.open")
+        .forEach((d) => d !== dropdown && d.classList.remove("open"));
+
+      dropdown.classList.add("open");
+
+      // Focus input if search dropdown
+      if (dropdown.classList.contains("search-item")) {
+        const input = dropdown.querySelector("input");
+        if (input) setTimeout(() => input.focus(), 50);
+      }
+    };
+
+    // CLICK OPEN (forces focus)
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      openedByHover = false; // user intentionally clicked
+
+      if (dropdown.classList.contains("open")) {
+        dropdown.classList.remove("open");
+        return;
+      }
+
+      openDropdown();
+    });
+
+    // HOVER OPEN
+    dropdown.addEventListener("mouseenter", () => {
+      openedByHover = true;
+      openDropdown();
+    });
+
+    // ONLY CLOSE ON HOVER-OUT IF IT WAS HOVER-OPENED
+    dropdown.addEventListener("mouseleave", () => {
+      if (openedByHover) {
+        dropdown.classList.remove("open");
       }
     });
   });
