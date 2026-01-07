@@ -817,11 +817,11 @@
 /* ===== MOBILE (≤ 768px) ===== */
 @media (max-width: 768px) {
   .newsletter h2 {
-    font-size: 26px;
+    /* font-size: 26px; */
   }
 
   .newsletter .subtitle {
-    font-size: 13px;
+    /* font-size: 13px; */
     margin-bottom: 30px;
   }
 
@@ -858,11 +858,11 @@
 /* ===== SMALL DEVICES (≤ 480px) ===== */
 @media (max-width: 480px) {
   .newsletter h2 {
-    font-size: 22px;
+    /* font-size: 22px; */
   }
 
   .newsletter .subtitle {
-    font-size: 12px;
+    /* font-size: 12px; */
     margin-bottom: 20px;
   }
 

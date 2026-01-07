@@ -42,7 +42,8 @@
   font-size: 2rem;
   font-weight: 700;
   color: var(--text-dark);
-  margin: 0;align-self: center;
+  margin: 0;
+  align-self: center;
 }
 
 .events-tabs {
@@ -276,13 +277,22 @@
     align-items: flex-start;
   }
 
+  .event-image-wrapper {
+    height: 275px;
+  }
+
   .events-tabs {
     /* gap: 10px;
     margin-top: 15px; */
+    align-self: center;
   }
 
   .events-tabs a {
-    font-size: 0.8em;
+    font-size: 12px;
+  }
+
+  .event-content {
+    padding: 8px;
   }
 
   .events-grid {
