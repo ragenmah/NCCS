@@ -263,9 +263,21 @@ document.addEventListener("DOMContentLoaded", () => {
     pauseAuto();
   });
 
-  carousel.addEventListener("pointerup", (e) => {
+  carousel.addEventListener("pointermove", (e) => {
+    if (!startX) return;
     endX = e.clientX;
+  });
+
+  carousel.addEventListener("pointerup", () => {
     handleSwipe();
+    startX = 0;
+    endX = 0;
+    startAuto();
+  });
+
+  carousel.addEventListener("pointercancel", () => {
+    startX = 0;
+    endX = 0;
     startAuto();
   });
 
