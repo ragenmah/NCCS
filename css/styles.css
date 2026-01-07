@@ -266,6 +266,14 @@ header {
   transform: rotate(180deg);
 }
 
+.dropdown >.search-toggle i {
+   padding: 1.5px;
+   /* font-size: 13px; */
+}
+.dropdown:hover>.search-toggle i {
+  transform: rotate( 0deg);
+}
+
 .nav .active {
   color: var(--primary);
 }
@@ -277,8 +285,8 @@ header {
 .dropdown-menu {
   display: none;
   position: absolute;
-  /* pad */
-  top: 100%;
+  padding-top: 20px;
+  /* top: 100%; */
   /* very imp  top*/
   left: 0;
   right: 0;
@@ -287,6 +295,9 @@ header {
   background: var(--white);
   /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); */
   z-index: 998;
+}
+.search-dropdown .dropdown-menu {
+   padding-top: 40px;
 }
 
 /* Show on hover */

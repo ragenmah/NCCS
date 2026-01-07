@@ -207,6 +207,7 @@
     .dropdown-menu {
         position: static;
         display: none;
+        padding-top: 0px;
         padding: 6px 12px;
         box-shadow: none;
     }
